@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/* section_1  */
+.section_1{
+    width: 100%;
+    height: 700px;
+    border: 1px solid;
+    position: relative;
+}
+.section_1_box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.section_1_box_tiitle{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    border: 1px solid;
+    left: 150px;
+    top: 100px;
+    font-size: 40px;
+    text-align: center;
+}
+/* section_2 */
+.section_2{
+    width: 100%;
+    height: 700px;
+}
+.section_2_box{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid;
+}
+.section_2_title{
+    width: 100%;
+    height: 15%;
+}
+.section_2_subtitle{
+    width: 100%;
+    height: 10%;
+    border: 1px solid;
+}
+.Car_color{
+    width: 100%;
+    height: 15%;
+}
+.Car_color_box{
+    width: 30%;
+    height: 100%;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+}
+.Car_color_box_small{
+    line-height: 100px;
+    font-size: 20px;
+}
+.Car_type{
+    width: 100%;
+    height: 60%;
+}
+/* .section_3 */
+.section_3{
+    width: 100%;
+    height: 700px;
+    border: 1px solid;
+}
