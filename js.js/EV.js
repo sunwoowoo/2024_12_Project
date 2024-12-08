@@ -69,4 +69,32 @@ $(document).ready(function(){
     // 초기화
     createDots();
     updateDots();  
-})
+}
+)
+//  car_type________________________________________________________________________________
+$(document).ready(function(){
+    let container = document.querySelector('car_type_box');
+    container.addEventListener('scroll', function() {
+    })
+    var div = document.getElementById('Car_type_scroll');
+    let chk = false;
+    let m_posX = 0;
+    let m_posY = 0;
+    div.addEventListener('mousedown',function(e){
+    chk = true;
+    m_posX = e.pageX;
+    m_posY = e.pageY;
+    })
+    
+    window.addEventListener('mouseup',function(e){
+    chk = false;
+    m_posX = e.pageX;
+    m_posY = e.pageY;
+    })
+    
+    const scrollContainer = document.querySelector("car_type_box");
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+    });
+    })
