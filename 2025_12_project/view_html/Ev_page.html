@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Ev</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+
+    <script src="/js.js/EV.js"></script>
     <link rel="stylesheet" href="../css/Header.css">
     <link rel="stylesheet" href="../css/Footer.css">
     <link rel="stylesheet" href="../css/Ev.css">
@@ -12,11 +20,16 @@
     <header> 맨위</header>
     <main>
         <div class="section_1">
-            <div class="section_1_box">
-                <div class="section_1_box_tiitle">
-                    1
-                </div>
+            <div class="section_1_container" id="slider_1">
+                <div class="section_1_slider">1</div>
+                <div class="section_1_slider">2</div>
+                <div class="section_1_slider">3</div>
             </div>
+            <div class="section_1_controls">
+                <button class="section_1_button" id="prev">이전</button>
+                <button class="section_1_button" id="next">다음</button>
+            </div>
+            <div class="dots" id="dots"></div>
         </div>
         <div class="section_2">
             <div class="section_2_box">
@@ -28,7 +41,8 @@
                         <div class="Car_color_box_small">2</div>
                     </div>
                 </div>
-                <div class="Car_type"></div>
+                <div class="Car_type">
+                </div>
             </div>
         </div>
         <div class="section_3">3</div>

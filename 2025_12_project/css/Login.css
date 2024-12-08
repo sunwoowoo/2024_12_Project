@@ -1,0 +1,45 @@
+table {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  font-size: 15px;
+}
+.box{
+  width: 250px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  padding: 2px;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color: rgb(233,233,233);
+}
+.btn {
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  padding-left: 10px;
+  color: white;
+  background-color: rgb(219, 102, 200);
+}
+.btn:active {
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: rgb(117, 185, 122);
+}
+a {
+  font-size: 12px;
+  color: darkgray;
+  text-decoration-line: none;
+  padding-right: 22px;
+}
+.red{
+  text-align: left;
+}
+.bac{
+  text-align: center;
+}

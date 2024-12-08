@@ -1,0 +1,43 @@
+table {
+  width: 280px;
+  height: 550px;
+  margin: auto;
+
+}
+.box{
+  width: 250px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  padding: 2px;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color: rgb(233,233,233);
+}
+.btn {
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  padding-left: 10px;
+  color: white;
+  background-color: rgb(117, 185, 122);
+}
+.btn:active {
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: rgb(219, 102, 200);
+}
+.email{
+  width: 150px;
+  height: 30px;
+  font-size: 15px;
+  border: 0;
+  padding: 2px;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color: rgb(233,233,233);
+}
