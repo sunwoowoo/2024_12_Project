@@ -2,13 +2,7 @@ body{
     margin: 0;
     padding: 0;
 }
-a{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: inherit;
-    text-decoration: none;
-}
+
 /* section_1 _____________________________________________________________________________________________*/
 .section_1{
     width: 100%;
@@ -74,6 +68,7 @@ a{
 .section_2{
     width: 100%;
     height: 700px;
+    margin-top: 50px;
 }
 .section_2_box{
     width: 80%;
@@ -85,7 +80,7 @@ a{
 }
 .section_2_title{
     width: 100%;
-    height: 15%;
+    height: 10%;
 }
 .section_2_subtitle{
     width: 100%;
@@ -107,12 +102,57 @@ a{
 .Car_type{
     width: 100%;
     margin: auto;
+    margin-top: 20px;
     height: 60%;
     border: 1px solid;
 }
-.Car_type_box{
+.Car_type_box_scroll{overflow: scroll;}
+.Car_conten {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+}
+.car_box{
+    width: 50%;
+    height:100%;
+    background: #dfe6e9;
+    border-radius: 10px;
+}
+.Car_type_box::-webkit-scrollbar {width: 0;}
+.Car_type_box::-webkit-scrollbar-track {border-radius: 10px;background-color: #ced6e0;}
+.Car_type_box::-webkit-scrollbar-thumb {border-radius: 10px;background-color: #2f3542;}
+.Car_type_box::-webkit-scrollbar-button {width: 0;height: 0;}
+/* 가로 스크롤 끝 */
+.Car_type_box_NOscroll{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.car_box_no_scroll{
+    width: 30%;
+    height: 100%;
+    border: 1px solid;
+    border-radius: 10px;
+}
+/* 공동 사이즈  */
+.car_photos{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    background: sandybrown;
+    border-radius: 10px 10px 0 0;
+}
+.car_list{
+    width: 100%;
+    height: 50%;
+}
+.car_list > div{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    line-height: 100px;
 }
 /* .section_3 ___________________________________*/
 .section_3{
@@ -122,7 +162,7 @@ a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    margin-top: 50px;
 }
 .section_3_box{
     width: 30%;

@@ -104,6 +104,32 @@ function showMain(num) {
     }
 }
 //  car_type________________________________________________________________________________
+$(document).ready(function(){
+    let container = document.querySelector('.Car_type_box_scroll ');
+    container.addEventListener('scroll', function() {
+    })
+    var div = document.getElementById('Car_type_div');
+    let chk = false;
+    let m_posX = 0;
+    let m_posY = 0;
+    div.addEventListener('mousedown',function(e){
+    chk = true;
+    m_posX = e.pageX;
+    m_posY = e.pageY;
+    })
+    
+    window.addEventListener('mouseup',function(e){
+    chk = false;
+    m_posX = e.pageX;
+    m_posY = e.pageY;
+    })
+    
+    const scrollContainer = document.querySelector(".Car_type_box_scroll ");
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+    });
+    })
 // section_3_______________________________________________________________________
 function changeBg(colcr){
     let result = document.querySelector('#section_3_onclick');
