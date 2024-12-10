@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입 화면</title>
   <link rel="stylesheet" href="../css/Sing_Up.css">
+  <link rel="stylesheet" href="../css/Header.css">
+  <link rel="stylesheet" href="../css/Footer.css">
 </head>
 <body>
-  <header> 맨위</header>
+  <header>
+    <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
+    <div class="muen"> 메뉴</div>
+    <div class="members">
+        <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
+        <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
+    </div>
+  </header>
   <main>
   <form action="login.html">
       <table>
@@ -42,6 +51,10 @@
       </table>
   </form>
 </main>
-<footer>맨 아래</footer>
+<footer>
+  <div class="footer_1"> SNS 사진 총 4개</div>
+  <div class="footer_2"> 이쁜 로고 및 사진</div>
+  <div class="footer_3"> 깃 허브 주소 </div>
+</footer>
 </body>
 </html>

@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>마이페이지 화면</title>
-  <link rel="stylesheet" href="css/MyPage.css">
+  <link rel="stylesheet" href="../css/MyPage.css">
+  <link rel="stylesheet" href="../css/Header.css">
+  <link rel="stylesheet" href="../css/Footer.css">
+  <script  src="../js/Mypage.js"></script>
 </head>
 <body>
-  <div class="mypage-container">
-    <header class="header">
-      <h1>마이페이지</h1>
-    </header>
-    
+  <header>
+    <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
+    <div class="muen"> 메뉴</div>
+    <div class="members">
+        <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
+        <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
+    </div>
+  </header>
+    <div class="mypage-container">
     <div class="content-wrapper">
       <aside class="sidebar">
         <div class="profile-section">
@@ -19,40 +26,48 @@
           <h2>이름</h2>
           <p class="email">name123@naver.com</p>
         </div>
-
         <nav class="nav-section">
           <ul>
-            <li><a href="#account">계정 정보</a></li>
-            <li><a href="#orders">주문 내역</a></li>
-            <li><a href="#option">옵션A</a></li>
-            <li><a href="#settings">설정</a></li>
-            <li><a href="#logout">로그아웃</a></li>
+            <li onclick="showMain(1)" class="nav_section_box" id="nav_section_tag1"><a href="#account">계정 정보</a></li>
+            <li onclick="showMain(2)" class="nav_section_box" id="nav_section_tag2"><a href="#orders">주문 내역</a></li>
+            <li onclick="showMain(3)" class="nav_section_box" id="nav_section_tag3"><a href="#option">옵션A</a></li>
+            <li onclick="showMain(4)" class="nav_section_box" id="nav_section_tag4"><a href="#settings">설정</a></li>
+            <li ><a href="#logout">로그아웃</a></li>
           </ul>
         </nav>
       </aside>
-
-      <main class="content-section">
-        <div class="card">
-          <h3>계정 정보</h3>
-          <p>계정 정보가 표시됩니다.</p>
+      <main class="content-section" >
+        <div class="content-section_box  content_js_1">
+          <div class="card">
+            <h3>계정 정보</h3>
+            <p>계정 정보가 표시됩니다.</p>
+          </div>
         </div>
-
-        <div class="card">
-          <h3>주문 내역</h3>
-          <p>주문 내역이 표시됩니다.</p>
+        <div class="content-section_box  content_js_2">
+          <div class="card">
+            <h3>주문 내역</h3>
+            <p>주문 내역이 표시됩니다.</p>
+          </div>
         </div>
-
-        <div class="card">
-          <h3>설정</h3>
+        <div class="content-section_box  content_js_3">
+          <div class="card">
+            <h3>설정</h3>
           <p>설정 표시됩니다.</p>
         </div>
-
-        <div class="card">
-          <h3>옵션A</h3>
-          <p>옵션B 표시됩니다.</p>
         </div>
+        <div class="content-section_box  content_js_4">
+          <div class="card">
+            <h3>옵션A</h3>
+            <p>옵션B 표시됩니다.</p>
+        </div>
+      </div>
       </main>
     </div>
   </div>
+  <footer>
+    <div class="footer_1"> SNS 사진 총 4개</div>
+    <div class="footer_2"> 이쁜 로고 및 사진</div>
+    <div class="footer_3"> 깃 허브 주소 </div>
+</footer>
 </body>
 </html>
