@@ -2,6 +2,13 @@ body{
     margin: 0;
     padding: 0;
 }
+a{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    text-decoration: none;
+}
 /* section_1 _____________________________________________________________________________________________*/
 .section_1{
     width: 100%;
@@ -63,7 +70,7 @@ body{
     background: #000;
     transform: scale(1.5);
 }
-/* section_2 */
+/* section_2 __________________________________*/
 .section_2{
     width: 100%;
     height: 700px;
@@ -88,50 +95,38 @@ body{
 .Car_color{
     width: 100%;
     height: 15%;
+    display: flex;
+    justify-content: space-around;
 }
 .Car_color_box{
-    width: 30%;
+    width: 20%;
     height: 100%;
     border: 1px solid;
-    display: flex;
-    justify-content: space-between;
-}
-.Car_color_box_small{
-    line-height: 100px;
-    font-size: 20px;
 }
 /*  Car_type ______________________________________ */
 .Car_type{
-    width: 1000px;
+    width: 100%;
     margin: auto;
     height: 60%;
+    border: 1px solid;
 }
-.Car_type_1{
+.Car_type_box{
     width: 100%;
     height: 100%;
-    background: #fff;
-    overflow: scroll;
-    border-radius: 10px;
 }
-.car_type_conten {
-    width: 300%;
-    height: 100%;
-    display: flex;
-    gap: 10px;
-}
-.car_type_box{
-    width: 50%;
-    height:100%;
-    background: #dfe6e9;
-    border-radius: 10px;
-}
-.car_type_box::-webkit-scrollbar {width: 0;}
-.car_type_box::-webkit-scrollbar-track {border-radius: 10px;background-color: #ced6e0;}
-.car_type_box::-webkit-scrollbar-thumb {border-radius: 10px;background-color: #2f3542;}
-.car_type_box::-webkit-scrollbar-button {width: 0;height: 0;}
-/* .section_3 */
+/* .section_3 ___________________________________*/
 .section_3{
     width: 100%;
     height: 700px;
     border: 1px solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.section_3_box{
+    width: 30%;
+    height: 70%;
+    border:  1px solid;
+    border-radius: 30px;
 }
