@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      width: 100%;
+      height: 50px;
+    }
+    .section1 {
+      border: 1px solid;
+      width: 60%;
+      height: 100px;
+    }
+    .section2 {
+      border: 1px solid;
+      width: 60%;
+      height: 500px;
+    }
+    .select {
+
+    }
+    
+    .image {
+      border: 1px solid;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+    }
+    footer {
+      width: 100%;
+      height: 50px;
+    }
+  </style>
 </head>
 <body>
-    <header></header>
-    <div class="section"></div>
+  <header>header</header>
+  <h1>모닝</h1>
+  <div>
+    <div class = "section1">
+      <p>총 차량 가격</p>
+      <p>10000000원</p>
+    </div>
+    <div class = "section2">
+      <p class="select"><input type = "radio" name="chk_info">트림</p>
+      <p class="select"><input type= "radio" name="chk_info">컬러</p>
+      <p class="select"><input type = "radio" name="chk_info">옵션</p>
+      <p class="select"><input type = "radio" name="chk_info">악세서리</p>
+      <p class="image">이미지</p>
+    </div>
+  </div>
+  <div>
+    <div class="section3">트림 선택
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </div>
+  <footer>footer</footer>
 </body>
-<footer>
-</footer>
 </html>

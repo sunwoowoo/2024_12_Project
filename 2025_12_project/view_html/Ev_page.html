@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Ev</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+    <title>Ev</title>
 
-    <script src="/js.js/EV.js"></script>
     <link rel="stylesheet" href="../css/Header.css">
     <link rel="stylesheet" href="../css/Footer.css">
     <link rel="stylesheet" href="../css/Ev.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/Ev.js"></script>
 </head>
 <body>
-    <header> 맨위</header>
+    <header>
+        <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
+        <div class="muen"> 메뉴</div>
+        <div class="members">
+            <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
+            <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
+        </div>
+    </header>
     <main>
         <div class="section_1">
             <div class="section_1_container" id="slider_1">
@@ -36,17 +39,173 @@
                 <div class="section_2_title"><h2>제목</h2></div>
                 <div class="section_2_subtitle"><h3>세부 내용</h3></div>
                 <div class="Car_color">
-                    <div class="Car_color_box">
-                        <div class="Car_color_box_small">1</div>
-                        <div class="Car_color_box_small">2</div>
-                    </div>
+                    <div onclick="showMain(1)"  class="Car_color_box" id="Car_color_tag1">ALL</div>
+                    <div onclick="showMain(2)"  class="Car_color_box" id="Car_color_tag2">2</div>
+                    <div onclick="showMain(3)"  class="Car_color_box" id="Car_color_tag3">3</div>
+                    <div onclick="showMain(4)"  class="Car_color_box" id="Car_color_tag4">4</div>
                 </div>
-                <div class="Car_type">
+                <div class="Car_type" >
+                    <div class="Car_type_box Car_type_box_scroll Car_type_js_1" id="Car_type_div">
+                        <div  class="Car_conten">
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Car_type_box Car_type_js_2">
+                        <div class="Car_type_box_NOscroll">
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Car_type_box Car_type_js_3">
+                        <div class="Car_type_box_NOscroll">
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Car_type_box Car_type_js_4">
+                        <div class="Car_type_box_NOscroll">
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                            <div  class="car_box_no_scroll">
+                                <div class="car_photos">사진 넣는곳</div>
+                                <div class="car_list">
+                                    <div>자동차 이름</div>
+                                    <div>가격</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="section_3">3</div>
+        <div class="section_3" id="section_3_onclick">
+            <div class="section_3_box" onclick="changeBg('green')">
+                클릭 시 뒤에 배경 바뀜
+            </div>
+            <div class="section_3_box" onclick="changeBg('orange')">
+                클릭 시 뒤에 배경 바뀜
+            </div>
+            <div class="section_3_box" onclick="changeBg('purple')">
+                클릭 시 뒤에 배경 바뀜
+            </div>
+        </div>
     </main>
-    <footer>맨 아래</footer>
+    <footer>
+        <div class="footer_1"> SNS 사진 총 4개</div>
+        <div class="footer_2"> 이쁜 로고 및 사진</div>
+        <div class="footer_3"> 깃 허브 주소 </div>
+    </footer>
 </body>
 </html>
