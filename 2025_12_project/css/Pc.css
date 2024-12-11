@@ -92,11 +92,18 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* 김선우 수정 ____________________ */
+.color_box_1{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
 }
-
-.section4 .image {
-  width: 60%;
+.section4 .image_1 {
+  width: 55%;
   height: 80%;
   border: 1px solid #222;
   /* background-color: royalblue; */
@@ -132,15 +139,23 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* 김선우 수정 ____________________ */
+.color_box_2{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
 }
-
-.section5 .image {
-  width: 60%;
+.section5 .image_2 {
+  width: 55%;
   height: 80%;
   border: 1px solid #222;
   /* background-color: royalblue; */
 }
+
 /* .section6______________________________________________________________ */
 .section6 {
   width: 100%;
