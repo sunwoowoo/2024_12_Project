@@ -1,3 +1,21 @@
+//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var scrollTop = $(window).scrollTop();
+      var header = $(".section2");
+      var content = $(".section3");
+
+  if (scrollTop > content.offset().top ) {
+      header.css({
+          "position": "fixed",
+          "top": "0" ,
+          "left": "15%"
+      });
+  }else {
+      header.css("position", "static");}
+  });
+});
+//  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~??~~~~~~~~~
 function scrollToElement1() {
   document.getElementById('targetElement1').scrollIntoView({
       behavior: 'smooth',
