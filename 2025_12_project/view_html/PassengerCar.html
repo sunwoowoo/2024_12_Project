@@ -4,94 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            width: 100%;
-            height: 50px;
-        }
-        .logo {
-            width: 100%;
-            height: 100px;
-            border: 1px solid;
-            padding-left: 50%;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .section1 {
-            width: 100%;
-            height: 700px;
-            border: 1px solid;
-        }
-        .PassengerlCar {
-            /* position: absolute; */
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .section2 {
-            padding: 20px;
-            /* border: 1px solid; */
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-        }
-        .card {
-            flex: 1;
-            border: 1px solid;
-            width: 300px;
-            height: 300px;
-            padding: 10px;
-        }
-        .box{
-            width: 100%;
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-        }
-        button {
-
-        }
-        footer {
-            width: 100%;
-            height: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/Pc.css">
+    <link rel="stylesheet" href="../css/Header.css">
+    <link rel="stylesheet" href="../css/Footer.css">
 </head>
 <body>
-    <header>header</header>
-    <h1 class = "logo">견적 내기</h1>
-    <div class="section1">승용
-        <div class="PassengerlCar">
-            <div type = "radio">자가용</div>
-            <div type = "radio">렌터카</div>
-            <div type = "radio">장애인</div>
+    <header>
+        <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
+        <div class="muen"> 메뉴</div>
+        <div class="members">
+            <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
+            <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
         </div>
-        <div class="section2">
-            <div class="card">
-                <p class="content">차 이름1<br></p>
-                <p class = "content">가격</p>
-                <p><button>자세히 보기</button></p>
-                <p><button>견적 내기</button></p>
-            </div>
-            <div class="card">
-                <p class="content">차 이름2<br></p>
-                <p class="content">가격</p>
-                <p><button>자세히 보기</button></p>
-                <p><button>견적 내기</button></p>
-            </div>
-            <div class="card">
-                <p class = "content">차 이름3<br></p>
-                <p class = "content">가격</p>
-                <p><button>자세히 보기</button></p>
-                <p><button>견적 내기</button></p>
-            </div>
+    </header>
+    <div class="container">
+        <div class = "section1">
+            <div class="card">차량 이미지1</div>
+            <div class="card">차량 이미지2</div>
+            <div class="card">차량 이미지3</div>
+        </div>
+        <div class = "section2">
+            <div class="select"><button type="button" onclick="scrollToElement1()">엔진</button></div>
+            <div class="select"><button type="button" onclick="scrollToElement2()">외장색상</button></div>
+            <div class="select"><button type="button" onclick="scrollToElement3()">내장색상</button></div>
+            <div class="select"><button type="button" onclick="scrollToElement4()">옵션</button></div>
         </div>
     </div>
-    <footer>footer</footer>
+    <div>
+        <div id="targetElement1" class="section3">
+            <div class="engine">
+                <input type="radio" name="gasolin" value="gasolin_yes">
+                <label for = "gasolin_yes">가솔린</label>
+            </div>
+            <div class="engine">
+                <input type="radio" name="gasolin" value="gasolin_no">
+                <label for = "gasolin_no">LPG</label>
+            </div>
+        </div>
+        <div id="targetElement2" class="section4">
+            <div class="image">이미지</div>
+            <div class="color"><button type="button">1</button></div>
+            <div class="color"><button type="button">2</button></div>
+            <div class="color"><button type="button">3</button></div>
+            <div class="color"><button type="button">4</button></div>
+            <div class="color"><button type="button">5</button></div>
+            <div class="color"><button type="button">6</button></div>
+        </div>
+        <div id="targetElement3" class="section5">
+            <div class="image">이미지</div>
+            <div class="color"><button type="button">1</button></div>
+            <div class="color"><button type="button">2</button></div>
+            <div class="color"><button type="button">3</button></div>
+            <div class="color"><button type="button">4</button></div>
+            <div class="color"><button type="button">5</button></div>
+            <div class="color"><button type="button">6</button></div>
+        </div>
+        <div id="targetElement4" class="section6">
+            <div class="option"><input type="checkbox" id="option1"><label for="option1">option1</label></div>
+            <div class="option"><input type="checkbox" id="option1"><label for="option2">option2</label></div>
+            <div class="option"><input type="checkbox" id="option1"><label for="option3">option3</label></div>
+            <div class="option"><input type="checkbox" id="option1"><label for="option4">option4</label></div>
+            <div class="option"><input type="checkbox" id="option1"><label for="option5">option5</label></div>
+            <div class="option"><input type="checkbox" id="option1"><label for="option6">option6</label></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_1"> SNS 사진 총 4개</div>
+        <div class="footer_2"> 이쁜 로고 및 사진</div>
+        <div class="footer_3"> 깃 허브 주소 </div>
+    </footer>
+    <script type="text/javascript" src="../js/pc.js"></script>
 </body>
 </html>
