@@ -11,6 +11,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  margin: 120px auto;
 }
 
 .header {
@@ -34,6 +35,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   padding: 20px;
+  margin: auto 20px;
 }
 
 .profile-section {
@@ -43,8 +45,8 @@ body {
 }
 
 .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
