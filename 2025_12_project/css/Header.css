@@ -2,10 +2,55 @@ body{
     margin: 0;
     padding: 0;
 }
-
-
 header{
     width: 100%;
     height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/* logo________________________________________________ */
+.logo{
+    width: 15%;
+    height: 100%;
+    border: 1px solid;
+}
+/* muen_____________________________ */
+.muen{
+    width: 55%;
+    height: 100%;
+    border: 1px solid;
+}
+.members{
+    width: 30%;
+    height: 100%;
+    display: flex;
+}
+.login{
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
+    border: 1px solid;
+}
+.Sing_Up{
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
     border: 1px solid;
 }
