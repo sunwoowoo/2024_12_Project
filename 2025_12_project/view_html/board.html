@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/board.css">
+    <link rel="stylesheet" href="../css/Header.css">
+    <link rel="stylesheet" href="../css/Footer.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
+        <div class="muen"> 메뉴</div>
+        <div class="members">
+            <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
+            <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="section1">
+            <form>
+                <div class="madeDate">생산일
+                    <select name="madeDate">
+                        <option>2024년</option>
+                        <option>2023년</option>
+                        <option>2022년</option>
+                        <option>2021년</option>
+                    </select>
+                </div>
+
+                <div class="oil">연료
+                    <input type="radio" value="휘발유"/>
+                    <label for ="oil">휘발유</label>
+                    <input type="radio" value="경유"/>
+                    <label for ="oil">경유</label>
+                    <input type="radio" value="LPG"/>
+                    <label for ="oil">LPG</label>
+                    <input type="radio" value="전기"/>
+                    <label for ="oil">전기</label>
+                </div>
+
+                <div class="price">가격
+                    <select name="price">
+                        <option>100만원</option>
+                        <option>200만원</option>
+                        <option>300만원</option>
+                        <option>400만원</option>
+                    </select>
+                    <div>~</div>
+                    <select name="price">
+                        <option>100만원</option>
+                        <option>200만원</option>
+                        <option>300만원</option>
+                        <option>400만원</option>
+                    </select>
+                </div>
+
+                <div class="color">색상
+                    <select name="color">    
+                        <option>흰색</option>
+                        <option>검정색</option>
+                        <option>회색</option>
+                        <option>네이비</option>
+                    </select>
+                </div>
+            </form>
+            <div class="bottons">
+                <button>선택 초기화</button>
+                <button>검색</button>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="content">
+                <div class="car_box">
+                    <div>차 이름</div>
+                    <div>세부 설명</div>
+                </div>
+                <div class="car_box">
+                    <div>차 이름</div>
+                    <div>세부 설명</div>
+                </div>
+                <div class="car_box">
+                    <div>차 이름</div>
+                    <div>세부 설명</div>
+                </div>
+                <div class="car_box">
+                    <div>차 이름</div>
+                    <div>세부 설명</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_1"> SNS 사진 총 4개</div>
+        <div class="footer_2"> 이쁜 로고 및 사진</div>
+        <div class="footer_3"> 깃 허브 주소 </div>
+    </footer>
+</body>
+</html>
