@@ -131,7 +131,15 @@ $(document).ready(function(){
     });
     })
 // section_3_______________________________________________________________________
-function changeBg(colcr){
+function changeBg(colorOrImage) {
     let result = document.querySelector('#section_3_onclick');
-    result.style.backgroundColor = colcr;
+    
+    // 배경 설정 로직
+    if (colorOrImage === 'green') {
+        result.style.background = "url('../Photos/ap_sec4.jpg') no-repeat center / cover";
+    } else if (colorOrImage === 'orange') {
+        result.style.background = "url('../Photos/ap_sec5.png') no-repeat center / cover";
+    } else if (colorOrImage === 'purple') {
+        result.style.background = "url('../Photos/ap_sec6.jpg') no-repeat center / cover";
+    }
 }
