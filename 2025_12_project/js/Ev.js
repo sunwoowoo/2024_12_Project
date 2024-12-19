@@ -102,6 +102,7 @@ function showMain(num) {
         selectedTag.style.background = '#7f8c8d'; 
         selectedTag.style.color = '#fff';
     }
+    
 }
 //  car_type________________________________________________________________________________
 $(document).ready(function(){
@@ -137,9 +138,12 @@ function changeBg(colorOrImage) {
     // 배경 설정 로직
     if (colorOrImage === 'green') {
         result.style.background = "url('../Photos/ap_sec4.jpg') no-repeat center / cover";
+        result.style.backgroundAttachment = "fixed";
     } else if (colorOrImage === 'orange') {
         result.style.background = "url('../Photos/ap_sec5.png') no-repeat center / cover";
+        result.style.backgroundAttachment = "fixed";
     } else if (colorOrImage === 'purple') {
         result.style.background = "url('../Photos/ap_sec6.jpg') no-repeat center / cover";
+        result.style.backgroundAttachment = "fixed";
     }
 }

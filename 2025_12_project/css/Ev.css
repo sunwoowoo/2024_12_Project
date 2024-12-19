@@ -93,11 +93,29 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.Car_color_box{
-    width: 20% !important;
+.Car_color_box {
+    width: 20%;
     height: 100%;
-    border: 1px solid;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 100px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff); /* 입체감을 위한 그라데이션 */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 
+                -4px -4px 10px rgba(255, 255, 255, 0.7); /* 음영과 하이라이트 */
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
 }
+
+.Car_color_box:active {
+    background: linear-gradient(145deg, #d1d1d1, #f0f0f0); /* 눌렀을 때 색상 변화 */
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), 
+                inset -4px -4px 10px rgba(255, 255, 255, 0.7); /* 내부 그림자 */
+    transform: scale(0.98); /* 살짝 눌린 효과 */
+}
+
 /*  Car_type ______________________________________ */
 .Car_type{
     width: 100%;
