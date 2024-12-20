@@ -119,112 +119,118 @@
         </div>
     </div>
         <div class="section2">
-            <div class="content">
-            <%
-            int currentPage = 1; // 현재 페이지 번호
-            int itemsPerPage = 9; // 페이지당 항목 수
-            // 페이지 번호 가져오기
-            if (request.getParameter("page") != null) {
-            	try {
-            	currentPage = Integer.parseInt(request.getParameter("page"));
-            	} catch (NumberFormatException e) {
-            		currentPage = 1; // 잘못된 값이 들어오면 기본값 1로 설정
-            		}
-            	}
-            Connection conn = DBManager.getDBConnection();
-            String sql = "SELECT * FROM (" +
-                    "  SELECT car_name, mileage AS car_mileage, car_price, car_type, ROWNUM AS rn FROM (" +
-                    "    SELECT car_name, mileage, car_price, car_type FROM car_list ORDER BY car_name" +
-                    "  ) WHERE ROWNUM <= ?" +
-                    ") WHERE rn > ?";
+        <div class="content">
+    <%
+    int currentPage = 1; // 현재 페이지 번호
+    int itemsPerPage = 9; // 페이지당 항목 수
 
-            try {
-            	PreparedStatement pstmt = conn.prepareStatement(sql);
-            	pstmt.setInt(1, currentPage * itemsPerPage); // 상한 
-            	pstmt.setInt(2, (currentPage - 1) * itemsPerPage); // 하한
-            	ResultSet rs = pstmt.executeQuery();
+    // 페이지 번호 가져오기
+    if (request.getParameter("page") != null) {
+        try {
+            currentPage = Integer.parseInt(request.getParameter("page"));
+        } catch (NumberFormatException e) {
+            currentPage = 1; // 잘못된 값이 들어오면 기본값 1로 설정
+        }
+    }
 
-            	while (rs.next()) {
-            		java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
-            		int carPrice = rs.getInt("car_price");
-                	int mileage = rs.getInt("car_mileage");
-                    String formattedMileage = formatter.format(mileage);
-                    String formattedPrice = formatter.format(carPrice);
-            	%>
-            	<div class="car_box">
-            	<div>차 이름:  <%= rs.getString("car_name") %></div>
-                <div>주행 거리:  <%=formattedMileage%> km</div>
-                <div>월납입금:  <%=formattedPrice%> 원</div>
-                <div>차 종류: <%= rs.getString("car_type") %></div>
-                </div>
-                <%
-                }
+    Connection conn = DBManager.getDBConnection();
+    String sql = "SELECT * FROM (" +
+            "  SELECT car_name, mileage AS car_mileage, car_price, car_type, category, ROWNUM AS rn FROM (" +
+            "    SELECT car_name, mileage, car_price, car_type, category FROM car_list_view ORDER BY car_name" +
+            "  ) WHERE ROWNUM <= ?" +
+            ") WHERE rn > ?";
+    try {
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, currentPage * itemsPerPage); // 상한
+        pstmt.setInt(2, (currentPage - 1) * itemsPerPage); // 하한
+        ResultSet rs = pstmt.executeQuery();
 
-            	// 전체 데이터 총 조회
-            	String countSql = "SELECT COUNT(*) AS total FROM car_list";
-            	PreparedStatement countPstmt = conn.prepareStatement(countSql);
-            	ResultSet countRs = countPstmt.executeQuery();
-            	int totalItems = 0;
-            	if (countRs.next()) {
-            		totalItems = countRs.getInt("total");
-            		}
-            	int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
-            	DBManager.dbClose(conn, pstmt, rs);
-            	DBManager.dbClose(null, countPstmt, countRs);
-            	%>
-            	</div>
-            	
-            	<div class="pagination">   
-            	<%
-            	int maxPageLinks = 10; // 최대 표시할 페이지 번호 개수 ____________________________________________________________________________________
-            	int startPage = Math.max(1, currentPage - 5); // 시작 페이지 번호
-            	int endPage = Math.min(totalPages, startPage + maxPageLinks - 1); // 끝 페이지 번호
-            	
-            	// "이전" 버튼 ___________________________________________________________________________________
-            	if (currentPage > 1) {
-            	%> 
-            	<a href="?page=<%= currentPage - 1 %>">이전</a>
-            	<% } else { %>
-            	<span>이전</span>
-            	<%
-            	}
-            	// 페이지 번호 표시
-            	if (startPage > 1) {
-            	%>
-            	<a href="?page=1">1</a>
-            	<span>...</span>
-            	<%
-            	}
-            	
-            	for (int i = startPage; i <= endPage; i++) {
-            		if (i == currentPage) {
-            		%> <span><%= i %></span> <% } else { %>
-            		<a href="?page=<%= i %>"><%= i %></a>
-            		<%
-            		}
-            	}
-            	if (endPage < totalPages) {
-            	%>
-            	<span>...</span>
-            	<a href="?page=<%= totalPages %>"><%= totalPages %></a>
-            	<%
-            	}
-            	// "다음" 버튼 ________________________________________________________________________________
-            	if (currentPage < totalPages) {
-            	%>
-            	<a href="?page=<%= currentPage + 1 %>">다음</a>
-            	<%} else { %> <span>다음</span> <% }
-            	%>
-            	</div>
-            	<%
-            	} catch (SQLException se) {
-            		se.printStackTrace();
-            		System.err.println("테이블 조회 에러");
-            		}
-            		%> 
-           </div>
+        while (rs.next()) {
+            java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
+            int carPrice = rs.getInt("car_price");
+            int mileage = rs.getInt("car_mileage");
+            String formattedMileage = formatter.format(mileage);
+            String formattedPrice = formatter.format(carPrice);
+    %>
+    <div class="car_box">
+        <div>차 이름:  <%= rs.getString("car_name") %></div>
+        <div>주행 거리:  <%= formattedMileage %> km</div>
+        <div>월납입금:  <%= formattedPrice %> 원</div>
+        <div>차 종류: <%= rs.getString("car_type") %></div>
     </div>
-    <footer>
+    <%
+        }
+
+        // 전체 데이터 총 조회
+        String countSql = "SELECT COUNT(*) AS total FROM car_list_view";
+        PreparedStatement countPstmt = conn.prepareStatement(countSql);
+        ResultSet countRs = countPstmt.executeQuery();
+        int totalItems = 0;
+        if (countRs.next()) {
+            totalItems = countRs.getInt("total");
+        }
+        int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
+        DBManager.dbClose(conn, pstmt, rs);
+        DBManager.dbClose(null, countPstmt, countRs);
+    %>
+    </div>
+
+    <div class="pagination">
+        <%
+        int maxPageLinks = 10; // 최대 표시할 페이지 번호 개수
+        int startPage = Math.max(1, currentPage - 5); // 시작 페이지 번호
+        int endPage = Math.min(totalPages, startPage + maxPageLinks - 1); // 끝 페이지 번호
+
+        // "이전" 버튼
+        if (currentPage > 1) {
+        %>
+        <a href="?page=<%= currentPage - 1 %>">이전</a>
+        <% } else { %>
+        <span>이전</span>
+        <%
+        }
+        // 페이지 번호 표시
+        if (startPage > 1) {
+        %>
+        <a href="?page=1">1</a>
+        <span>...</span>
+        <%
+        }
+
+        for (int i = startPage; i <= endPage; i++) {
+            if (i == currentPage) {
+        %> 
+        <span><%= i %></span> 
+        <% } else { %>
+        <a href="?page=<%= i %>"><%= i %></a>
+        <%
+            }
+        }
+        if (endPage < totalPages) {
+        %>
+        <span>...</span>
+        <a href="?page=<%= totalPages %>"><%= totalPages %></a>
+        <%
+        }
+        // "다음" 버튼
+        if (currentPage < totalPages) {
+        %>
+        <a href="?page=<%= currentPage + 1 %>">다음</a>
+        <% } else { %> 
+        <span>다음</span> 
+        <% }
+        %>
+    </div>
+    <%
+    } catch (SQLException se) {
+        se.printStackTrace();
+        System.err.println("테이블 조회 에러");
+    }
+    %>
+    </div>
+    </div>        
+    </div>
+<footer>
         <div class="footer_1">
             <div>로고</div>
             <div class="sns">
@@ -262,3 +268,21 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
