@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="./css/Board.css">
     <link rel="stylesheet" href="./css/Header.css">
     <link rel="stylesheet" href="./css/Footer.css">
-    <script src="./js/board.js"></script>
 </head>
 <body>
     <header>
@@ -33,149 +32,200 @@
             <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
         </div>
     </header>
-    <div class="container">
-        <div class="section1">
-        <div class="section1_list_1">
-            <div class="title">차 종류</div>
-            <div class="section1_box_list">
-                <div id="section1_box_list1" onclick="showMain(1)">소형차</div>
-                <div id="section1_box_list2" onclick="showMain(2)">중형차</div>
-                <div id="section1_box_list3" onclick="showMain(3)">Suv</div>
-                <div id="section1_box_list4" onclick="showMain(4)">트럭/화물</div>
-            </div>
-        </div>
-        <div class="section1_list_2 section_type">
-            <div class="title">가격</div>
-            <div class="section1_box type_js_1">
-                <span class="price_range" onclick="highlight(this)">1,100만 원 ~ 1,400만 원</span>
-                <span class="price_range" onclick="highlight(this)">1,400만 원 ~ 1,600만 원</span>
-                <span class="price_range" onclick="highlight(this)">1,600만 원 ~ 1,800만 원</span>
-                <span class="price_range" onclick="highlight(this)">1,800만 원 ~ 2,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">2,000만 원 ~ 2,200만 원</span>
-                <span class="price_range" onclick="highlight(this)">2,200만 원 ~ 2,500만 원</span>
-            </div>
-            <div class="section1_box type_js_2">
-                <span class="price_range" onclick="highlight(this)">2,500만 원 ~ 3,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">2,700만 원 ~ 3,200만 원</span>
-                <span class="price_range" onclick="highlight(this)">2,900만 원 ~ 3,400만 원</span>
-                <span class="price_range" onclick="highlight(this)">3,400만 원 ~ 3,800만 원</span>
-                <span class="price_range" onclick="highlight(this)">3,800만 원 ~ 4,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">4,200만 원 ~ 4,500만 원</span>
-            </div>
-            <div class="section1_box type_js_3">
-                <span class="price_range" onclick="highlight(this)">2,000만 원 ~ 2,400만 원</span>
-                <span class="price_range" onclick="highlight(this)">2,400만 원 ~ 2,800만 원</span>
-                <span class="price_range" onclick="highlight(this)">2,800만 원 ~ 3,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">3,000만 원 ~ 3,500만 원</span>
-                <span class="price_range" onclick="highlight(this)">3,400만 원 ~ 4,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">4,500만 원 ~ 6,000만 원</span>
-            </div>
-            <div class="section1_box type_js_4">
-                <span class="price_range" onclick="highlight(this)">1,500만 원 ~ 2,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">1,600만 원 ~ 2,100만 원</span>
-                <span class="price_range" onclick="highlight(this)">2,300만 원 ~ 2,800만 원</span>
-                <span class="price_range" onclick="highlight(this)">3,500만 원 ~ 4,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">4,000만 원 ~ 5,000만 원</span>
-                <span class="price_range" onclick="highlight(this)">5,500만 원 ~ 7,000만 원</span>
-            </div>
-        </div>
-        <div class="section1_list_3 section_type">
-            <div class="title">주행 거리</div>
-            <div class="section1_box type_js_1">
-                <span class="mileage" onclick="mileagelist(this)"> 5만  km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 10만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 15만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 20만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 25만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 30만 km 이하</span>
-            </div>
-            <div class="section1_box type_js_2">
-                <span class="mileage" onclick="mileagelist(this)"> 5만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 10만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 15만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 20만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 25만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 30만 km 이하</span>
-            </div>
-            <div class="section1_box type_js_3">
-                <span class="mileage" onclick="mileagelist(this)"> 5만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 10만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 15만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 20만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 25만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 30만 km 이하</span>
-            </div>
-            <div class="section1_box type_js_4">
-                <span class="mileage" onclick="mileagelist(this)"> 5만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 10만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 15만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 20만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 25만 km 이하</span>
-                <span class="mileage" onclick="mileagelist(this)"> 30만 km 이하</span>
-            </div>
-        </div>
-        <div>
-            <button>검색</button>
-        </div>
-    </div>
-        <div class="section2">
-        <div class="content">
     <%
-    int currentPage = 1; // 현재 페이지 번호
-    int itemsPerPage = 9; // 페이지당 항목 수
+    // 1. 사용자가 선택한 필터 값 가져오기
+    String carType = request.getParameter("car_type");  // 차 종류
+    String priceRange = request.getParameter("price_range");  // 가격 범위
+    String mileage = request.getParameter("mileage");  // 주행 거리
+    int currentPage = 1;
+    int itemsPerPage = 9;
 
-    // 페이지 번호 가져오기
+    // 페이지 번호가 전달되면 currentPage 업데이트
     if (request.getParameter("page") != null) {
-        try {
-            currentPage = Integer.parseInt(request.getParameter("page"));
-        } catch (NumberFormatException e) {
-            currentPage = 1; // 잘못된 값이 들어오면 기본값 1로 설정
+    	  try {
+              currentPage = Integer.parseInt(request.getParameter("page"));
+          } catch (NumberFormatException e) {
+              currentPage = 1; // 잘못된 값이 들어오면 기본값 1로 설정
+          }
+    }
+
+    // 2. DB 연결
+    Connection conn = DBManager.getDBConnection();
+
+    // 3. 기본 SQL 쿼리 작성
+    StringBuilder sql = new StringBuilder("SELECT * FROM ( " +
+            "  SELECT car_name, mileage AS car_mileage, car_price, car_type, category, ROWNUM AS rn FROM ( " +
+            "    SELECT car_name, mileage, car_price, car_type, category FROM car_list_view WHERE 1=1 ");
+
+    // 필터 조건 추가
+    if (carType != null && !carType.isEmpty()) {
+        sql.append(" AND car_type = ? ");
+    }
+
+    if (priceRange != null && !priceRange.isEmpty()) {
+        String[] priceParts = priceRange.split("-");
+        if (priceParts.length == 2) {
+            sql.append(" AND car_price BETWEEN ? AND ? ");
         }
     }
 
-    Connection conn = DBManager.getDBConnection();
-    String sql = "SELECT * FROM (" +
-            "  SELECT car_name, mileage AS car_mileage, car_price, car_type, category, ROWNUM AS rn FROM (" +
-            "    SELECT car_name, mileage, car_price, car_type, category FROM car_list_view ORDER BY car_name" +
-            "  ) WHERE ROWNUM <= ?" +
-            ") WHERE rn > ?";
+    if (mileage != null && !mileage.isEmpty()) {
+    	String[] mileaget = mileage.split("-");
+        if (mileaget.length == 2) {
+            sql.append(" AND car_price BETWEEN ? AND ? ");
+        }
+    }
+
+    sql.append("  ORDER BY car_name) " +
+            " ) WHERE rn > ? AND rn <= ?");
+
     try {
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, currentPage * itemsPerPage); // 상한
-        pstmt.setInt(2, (currentPage - 1) * itemsPerPage); // 하한
+        // 4. PreparedStatement로 쿼리 실행
+        PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+        int paramIndex = 1;
+
+        // 조건에 맞는 값 설정
+        if (carType != null && !carType.isEmpty()) {
+            pstmt.setString(paramIndex++, carType);
+        }
+
+        if (priceRange != null && !priceRange.isEmpty()) {
+            String[] priceParts = priceRange.split("-");
+            if (priceParts.length == 2) {
+                pstmt.setInt(paramIndex++, Integer.parseInt(priceParts[0]));
+                pstmt.setInt(paramIndex++, Integer.parseInt(priceParts[1]));
+            }
+        }
+
+        if (mileage != null && !mileage.isEmpty()) {
+        	String[] mileaget  = priceRange.split("-");
+            if (mileaget.length == 2) {
+                pstmt.setInt(paramIndex++, Integer.parseInt(mileaget[0]));
+                pstmt.setInt(paramIndex++, Integer.parseInt(mileaget[1]));
+            }
+        }
+
+        pstmt.setInt(paramIndex++, (currentPage - 1) * itemsPerPage);  // 하한
+        pstmt.setInt(paramIndex++, currentPage * itemsPerPage);  // 상한
+
+        // 결과 실행
         ResultSet rs = pstmt.executeQuery();
 
+        %>
+    <form method="get">
+    <div class="section1_list_1">
+        <div class="title">차 종류</div>
+        <select id="car_type" name="car_type" size="4" class="section1_box_list">
+            <option value="소형차" <%= carType != null && carType.equals("소형차") ? "selected" : "" %> >소형차</option>
+            <option value="중형차" <%= carType != null && carType.equals("중형차") ? "selected" : "" %>>중형차</option>
+            <option value="Suv" <%= carType != null && carType.equals("Suv") ? "selected" : "" %>> Suv </option>
+            <option value="트럭/화물" <%= carType != null && carType.equals("트럭/화물") ? "selected" : "" %>>트럭/화물</option>
+        </select>
+    </div>
+
+    <div class="section1_list_2">
+        <div class="title">가격</div>
+        <select id="price_range" name="price_range" size="4" >
+            <option value="100000-1000000" <%= priceRange != null && priceRange.equals("100000-1000000") ? "selected" : "" %>>1,000만원 이하</option>
+            <option value="1000000-3000000" <%= priceRange != null && priceRange.equals("1000000-3000000") ? "selected" : "" %>>1,000만원 ~ 3,000만원</option>
+            <option value="3000000-5000000" <%= priceRange != null && priceRange.equals("3000000-5000000") ? "selected" : "" %>>3,000만원 ~ 5,000만원</option>
+            <option value="5000000-7000000" <%= priceRange != null && priceRange.equals("5000000-7000000") ? "selected" : "" %>>5,000만원 ~ 7,000만원</option>
+            <option value="7000000-10000000" <%= priceRange != null && priceRange.equals("7000000-10000000") ? "selected" : "" %>>7,000만원 ~ 1억원</option>
+           <option value="10000000-100000000" <%= priceRange != null && priceRange.equals("10000000-100000000") ? "selected" : "" %>>1억원 이상</option>
+        </select>
+
+    </div>
+    <div class="section1_list_3">
+        <div class="title">주행 거리</div>
+        <select id="mileage" name="mileage" size="4" >
+        <option value="0-50000" <%= mileage != null && mileage.equals("50000") ? "selected" : "" %>>5만 km 이하</option>
+        <option value="50000-100000" <%= mileage != null && mileage.equals("50000-100000") ? "selected" : "" %>>5만 km ~ 10만 km</option>
+        <option value="100000-150000" <%= mileage != null && mileage.equals("100000-150000") ? "selected" : "" %>>10만 km ~ 15만 km</option>
+        <option value="150000-200000" <%= mileage != null && mileage.equals("150000-200000") ? "selected" : "" %>>15만 km ~ 20만 km</option>
+        <option value="200000-300000" <%= mileage != null && mileage.equals("200000-300000") ? "selected" : "" %>>20만 km ~ 30만 km</option>
+        <option value="300000-3000000" <%= mileage != null && mileage.equals("300000-3000000") ? "selected" : "" %>>30만 km 이상</option>
+        </select>
+    </div>
+    <div class="search_button">
+        <button type="submit">검색</button>
+        <button type="reset" onclick="window.location.href=window.location.pathname;">초기화</button>
+    </div>
+</form>
+<div class="section2">
+        <div class="content">
+         <% 
+        // 5. 결과 출력
         while (rs.next()) {
             java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
             int carPrice = rs.getInt("car_price");
-            int mileage = rs.getInt("car_mileage");
-            String formattedMileage = formatter.format(mileage);
+            int carMileage = rs.getInt("car_mileage");
+            String formattedMileage = formatter.format(carMileage);
             String formattedPrice = formatter.format(carPrice);
-    %>
-    <div class="car_box">
-        <div>차 이름:  <%= rs.getString("car_name") %></div>
-        <div>주행 거리:  <%= formattedMileage %> km</div>
-        <div>월납입금:  <%= formattedPrice %> 원</div>
-        <div>차 종류: <%= rs.getString("car_type") %></div>
-    </div>
-    <%
+%>
+            <div class="car_box">
+                <div>차 이름: <%= rs.getString("car_name") %></div>
+                <div>주행 거리: <%= formattedMileage %> km</div>
+                <div>가격: <%= formattedPrice %> 원</div>
+                <div>차 종류: <%= rs.getString("car_type") %></div>
+            </div>
+<%
+        }
+         // 페이지 번호 가져오기
+         if (request.getParameter("page") != null) {
+             try {
+                 currentPage = Integer.parseInt(request.getParameter("page"));
+             } catch (NumberFormatException e) {
+                 currentPage = 1; // 잘못된 값이 들어오면 기본값 1로 설정
+             }
+         }
+        // 6. 전체 데이터 총 조회 (페이지네이션)
+        String countSql = "SELECT COUNT(*) AS total FROM car_list_view WHERE 1=1";
+        if (carType != null && !carType.isEmpty()) {
+            countSql += " AND car_type = ?";
+        }
+        
+        if (priceRange != null && !priceRange.isEmpty()) {
+            countSql += " AND car_price BETWEEN ? AND ?";
         }
 
-        // 전체 데이터 총 조회
-        String countSql = "SELECT COUNT(*) AS total FROM car_list_view";
+        if (mileage != null && !mileage.isEmpty()) {
+            countSql += " AND mileage <= ?";
+        }
+
         PreparedStatement countPstmt = conn.prepareStatement(countSql);
+        paramIndex = 1;
+
+        if (carType != null && !carType.isEmpty()) {
+            countPstmt.setString(paramIndex++, carType);
+        }
+
+        if (priceRange != null && !priceRange.isEmpty()) {
+            String[] priceParts = priceRange.split("-");
+            if (priceParts.length == 2) {
+                countPstmt.setInt(paramIndex++, Integer.parseInt(priceParts[0]));
+                countPstmt.setInt(paramIndex++, Integer.parseInt(priceParts[1]));
+            }
+        }
+
+        if (mileage != null && !mileage.isEmpty()) {
+        	 String[] mileaget = priceRange.split("-");
+             if (mileaget.length == 2) {
+                 countPstmt.setInt(paramIndex++, Integer.parseInt(mileaget[0]));
+                 countPstmt.setInt(paramIndex++, Integer.parseInt(mileaget[1]));
+             }
+        }
         ResultSet countRs = countPstmt.executeQuery();
         int totalItems = 0;
         if (countRs.next()) {
             totalItems = countRs.getInt("total");
         }
-        int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
-        DBManager.dbClose(conn, pstmt, rs);
-        DBManager.dbClose(null, countPstmt, countRs);
-    %>
-    </div>
 
-    <div class="pagination">
+        int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
+
+        // 7. 페이지네이션 출력
+%>
+        </div>
+        <div class="pagination">
         <%
         int maxPageLinks = 10; // 최대 표시할 페이지 번호 개수
         int startPage = Math.max(1, currentPage - 5); // 시작 페이지 번호
@@ -228,8 +278,8 @@
     }
     %>
     </div>
-    </div>        
     </div>
+       
 <footer>
         <div class="footer_1">
             <div>로고</div>
@@ -268,21 +318,4 @@
     </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+    

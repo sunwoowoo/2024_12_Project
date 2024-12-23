@@ -5,9 +5,9 @@
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="com.company1.AP" %>
+<%@ page import="com.company1.DBManager" %>
 <%
-	//한글 처리
+//한글 처리
 	request.setCharacterEncoding("UTF-8");
 %>  
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
 <body>
     <header>
         <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
-        <div class="muen"> 메뉴</div>
+        <div class="menu"> 메뉴</div>
         <div class="members">
             <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
             <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
@@ -59,138 +59,136 @@
                     <div class="Car_type_box Car_type_box_scroll Car_type_js_1" id="Car_type_divA">
                         <div  class="Car_conten">
                           <%
-                                Connection conn = null;
-                                PreparedStatement pstmt = null;
-                                ResultSet rs = null;
+                                                          Connection conn = null;
+                                                          PreparedStatement pstmt = null;
+                                                          ResultSet rs = null;
 
-                                try {
-                                    conn = AP.getDBConnection();
-                                    String sql = "SELECT l_car_bno , l_car_name, l_mileage , l_car_price FROM light_cars";
-                                    pstmt = conn.prepareStatement(sql);
-                                    rs = pstmt.executeQuery();
-                                    
-                                    java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
-                                    // 결과를 HTML로 출력
-                                    while (rs.next()) {
-                                    	int L_carBno = rs.getInt("l_car_bno");
-                                    	int L_mileage = rs.getInt("l_mileage");
-                                        String L_carName = rs.getString("l_car_name");
-                                        int L_carPrice = rs.getInt("l_car_price");
-                                        
-                                        String formattedMileage = formatter.format(L_mileage);
-                                        String formattedPrice = formatter.format(L_carPrice);
-;
-                            %>
+                                                          try {
+                                                              conn = DBManager.getDBConnection();
+                                                              String sql = "SELECT l_car_bno , l_car_name, l_mileage , l_car_price FROM light_cars";
+                                                              pstmt = conn.prepareStatement(sql);
+                                                              rs = pstmt.executeQuery();
+                                                              
+                                                              java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
+                                                              // 결과를 HTML로 출력
+                                                              while (rs.next()) {
+                                                              	int L_carBno = rs.getInt("l_car_bno");
+                                                              	int L_mileage = rs.getInt("l_mileage");
+                                                                  String L_carName = rs.getString("l_car_name");
+                                                                  int L_carPrice = rs.getInt("l_car_price");
+                                                                  
+                                                                  String formattedMileage = formatter.format(L_mileage);
+                                                                  String formattedPrice = formatter.format(L_carPrice);
+                          ;
+                          %>
                             <div class="car_box">
                                 <div class="car_photos">
-                                <div> 차량 번호: <%= L_carBno  %></div>
-                                 <div> <%= L_carName  %></div>
+                                <div> 차량 번호: <%=L_carBno%></div>
+                                 <div> <%=L_carName%></div>
                                  </div>
                                 <div class="car_list">
-                                    <div>주행거리: <%= formattedMileage %> km</div>
-                                    <div>월납입금: <%= formattedPrice %> 원</div>
+                                    <div>주행거리: <%=formattedMileage%> km</div>
+                                    <div>가격: <%=formattedPrice%> 원</div>
                                 </div>
                             </div>
                             <%
-                                    }
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                } finally {
-                                    if (rs != null) try { rs.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                    if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                    if (conn != null) try { conn.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                }
+                            }
+                                                            } catch (Exception e) {
+                                                                e.printStackTrace();
+                                                            } finally {
+                                                                if (rs != null) try { rs.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                                if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                                if (conn != null) try { conn.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                            }
                             %>
                          </div>
                    </div>
                     <div class="Car_type_box Car_type_box_scroll  Car_type_js_2 " id="Car_type_divB">
                      <div  class="Car_conten">
                     <%
-                               
-                                try {
-                                    conn = AP.getDBConnection();
-                                    String sql = "SELECT C_car_bno , C_car_name, C_mileage , C_car_price FROM Compact_cars";
-                                    pstmt = conn.prepareStatement(sql);
-                                    rs = pstmt.executeQuery();
+                    try {
+                                                        conn = DBManager.getDBConnection();
+                                                        String sql = "SELECT C_car_bno , C_car_name, C_mileage , C_car_price FROM Compact_cars";
+                                                        pstmt = conn.prepareStatement(sql);
+                                                        rs = pstmt.executeQuery();
 
-                                    // 결과를 HTML로 출력
-                                    while (rs.next()) {
-                                    	int C_carBno = rs.getInt("C_car_bno");
-                                    	int C_mileage = rs.getInt("C_mileage");
-                                        String C_carName = rs.getString("C_car_name");
-                                        int C_carPrice = rs.getInt("C_car_price");
-                                        
-                                        java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
-                                        
-                                        String formattedMileage = formatter.format(C_mileage);
-                                        String formattedPrice = formatter.format(C_carPrice);
-;
-;
-                            %>
+                                                        // 결과를 HTML로 출력
+                                                        while (rs.next()) {
+                                                        	int C_carBno = rs.getInt("C_car_bno");
+                                                        	int C_mileage = rs.getInt("C_mileage");
+                                                            String C_carName = rs.getString("C_car_name");
+                                                            int C_carPrice = rs.getInt("C_car_price");
+                                                            
+                                                            java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
+                                                            
+                                                            String formattedMileage = formatter.format(C_mileage);
+                                                            String formattedPrice = formatter.format(C_carPrice);
+                    ;
+                    ;
+                    %>
                             <div class="car_box">
                                 <div class="car_photos">
-                                <div> 차량 번호: <%= C_carBno  %></div>
-                                 <div><%= C_carName  %></div>
+                                <div> 차량 번호: <%=C_carBno%></div>
+                                 <div><%=C_carName%></div>
                                  </div>
                                 <div class="car_list">
-                                    <div>주행거리: <%= formattedMileage %> km</div>
-                                    <div>월납입금: <%= formattedPrice %> 원</div>
+                                    <div>주행거리: <%=formattedMileage%> km</div>
+                                    <div>가격: <%=formattedPrice%> 원</div>
                                 </div>
                             </div>
                             <%
-                                    }
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                } finally {
-                                    if (rs != null) try { rs.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                    if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                    if (conn != null) try { conn.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                }
+                            }
+                                                        } catch (Exception e) {
+                                                                e.printStackTrace();
+                                                            } finally {
+                                                                if (rs != null) try { rs.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                                if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                                if (conn != null) try { conn.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                            }
                             %>
                      </div>
                     </div>
                     <div class="Car_type_box Car_type_box_scroll  Car_type_js_3 " id="Car_type_divC">
                         <div  class="Car_conten">
                            <%
-                               
-                                try {
-                                    conn = AP.getDBConnection();
-                                    String sql = "SELECT S_car_bno , S_car_name, S_mileage , S_car_price FROM Suv";
-                                    pstmt = conn.prepareStatement(sql);
-                                    rs = pstmt.executeQuery();
+                           try {
+                                                               conn = DBManager.getDBConnection();
+                                                               String sql = "SELECT S_car_bno , S_car_name, S_mileage , S_car_price FROM Suv";
+                                                               pstmt = conn.prepareStatement(sql);
+                                                               rs = pstmt.executeQuery();
 
-                                    // 결과를 HTML로 출력
-                                    while (rs.next()) {
-                                    	int S_carBno = rs.getInt("S_car_bno");
-                                    	int S_mileage = rs.getInt("S_mileage");
-                                        String S_carName = rs.getString("S_car_name");
-                                        int S_carPrice = rs.getInt("S_car_price");
-                                        
-                                        java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
-                                        String formattedMileage = formatter.format(S_mileage);
-                                        String formattedPrice = formatter.format(S_carPrice);
-;
-;
-                            %>
+                                                               // 결과를 HTML로 출력
+                                                               while (rs.next()) {
+                                                               	int S_carBno = rs.getInt("S_car_bno");
+                                                               	int S_mileage = rs.getInt("S_mileage");
+                                                                   String S_carName = rs.getString("S_car_name");
+                                                                   int S_carPrice = rs.getInt("S_car_price");
+                                                                   
+                                                                   java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
+                                                                   String formattedMileage = formatter.format(S_mileage);
+                                                                   String formattedPrice = formatter.format(S_carPrice);
+                           ;
+                           ;
+                           %>
                             <div class="car_box">
                                 <div class="car_photos">
-                                 <div>차량 번호 <%= S_carBno %></div>  
-                                 <div><%= S_carName %></div>
+                                 <div>차량 번호 <%=S_carBno%></div>  
+                                 <div><%=S_carName%></div>
                                  </div>
                                 <div class="car_list">
-                                    <div>주행거리: <%= formattedMileage %> km</div>
-                                    <div>월납입금: <%= formattedPrice %> 원</div>
+                                    <div>주행거리: <%=formattedMileage%> km</div>
+                                    <div>가격: <%=formattedPrice%> 원</div>
                                 </div>
                             </div>
                             <%
-                                    }
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                } finally {
-                                    if (rs != null) try { rs.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                    if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                    if (conn != null) try { conn.close(); } catch (SQLException ex) { ex.printStackTrace(); }
-                                }
+                            }
+                                                            } catch (Exception e) {
+                                                                e.printStackTrace();
+                                                            } finally {
+                                                                if (rs != null) try { rs.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                                if (pstmt != null) try { pstmt.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                                if (conn != null) try { conn.close(); } catch (SQLException ex) { ex.printStackTrace(); }
+                                                            }
                             %>
                      </div>
                            
@@ -199,25 +197,24 @@
                     <div class="Car_type_box Car_type_box_scroll  Car_type_js_4 " id="Car_type_divD">
                           <div  class="Car_conten">
                            <%
-                               
-                                try {
-                                    conn = AP.getDBConnection();
-                                    String sql = "SELECT h_car_bno , h_car_name, h_mileage , h_car_price FROM heavy_cars";
-                                    pstmt = conn.prepareStatement(sql);
-                                    rs = pstmt.executeQuery();
+                           try {
+                                                               conn = DBManager.getDBConnection();
+                                                               String sql = "SELECT h_car_bno , h_car_name, h_mileage , h_car_price FROM heavy_cars";
+                                                               pstmt = conn.prepareStatement(sql);
+                                                               rs = pstmt.executeQuery();
 
-                                    // 결과를 HTML로 출력
-                                    while (rs.next()) {
-                                    	int h_carBno = rs.getInt("h_car_bno");
-                                    	int h_mileage = rs.getInt("h_mileage");
-                                        String h_carName = rs.getString("h_car_name");
-                                        int h_carPrice = rs.getInt("h_car_price");
-                                        
-                                        java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
-                                        String formattedMileage = formatter.format(h_mileage);
-                                        String formattedPrice = formatter.format(h_carPrice);
-;
-                            %>
+                                                               // 결과를 HTML로 출력
+                                                               while (rs.next()) {
+                                                               	int h_carBno = rs.getInt("h_car_bno");
+                                                               	int h_mileage = rs.getInt("h_mileage");
+                                                                   String h_carName = rs.getString("h_car_name");
+                                                                   int h_carPrice = rs.getInt("h_car_price");
+                                                                   
+                                                                   java.text.DecimalFormat formatter = new java.text.DecimalFormat("#,###");
+                                                                   String formattedMileage = formatter.format(h_mileage);
+                                                                   String formattedPrice = formatter.format(h_carPrice);
+                           ;
+                           %>
                             <div class="car_box">
                                 <div class="car_photos">
                                  <div> 차량 번호 <%= h_carBno %></div>  
@@ -225,7 +222,7 @@
                                  </div>
                                 <div class="car_list">
                                     <div>주행거리: <%= formattedMileage %> km</div>
-                                    <div>월납입금: <%= formattedPrice %> 원</div>
+                                    <div>가격: <%= formattedPrice %> 원</div>
                                 </div>
                             </div>
                             <%
