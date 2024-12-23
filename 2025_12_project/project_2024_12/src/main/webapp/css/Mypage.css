@@ -114,18 +114,21 @@ body {
 }
 #passwordBox {
   display: none; /* 초기에는 숨겨짐 */
-  width: 300px;
+  width: 350px;
+  bottom: 33%;
+  left: -18%; 
   padding: 20px;
   margin: 20px auto;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
+  justify-content: center;
 }
 
 #passwordBox input {
-  width: 100%;
+  width: 93%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;

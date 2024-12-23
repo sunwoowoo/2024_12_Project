@@ -10,7 +10,6 @@
         session.setAttribute("userpassword", newPassword);  // 세션에 새로운 비밀번호 저장
     }
 %>
-%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -18,11 +17,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 정보 수정</title>
+    <link rel="stylesheet" href="./css/Mypage_Update.css">
 </head>
 <body>
-    <h2>정보 수정</h2>
+    <h2>회원정보 수정</h2>
     <form action="Mypage_Update_form.jsp" method="POST">
-        <label for="newName">이름:</label>
+        <label for="newName">이름</label>
         <input type="text" id="newName" name="newName" value="<%= name %>" required>
         
         <label for="newEmail">이메일:</label>
@@ -37,7 +37,10 @@
         <label for="confirmPassword">비밀번호 확인:</label>
         <input type="password" id="confirmPassword" name="confirmPassword">
         
-        <input type="submit" value="수정 완료">
+        <div class="button-container">
+            <input type="submit" value="수정 완료">
+            <input type="button" value="취소" onclick="window.location.href='Mypage.jsp';">
+        </div>
     </form>
 </body>
 </html>
