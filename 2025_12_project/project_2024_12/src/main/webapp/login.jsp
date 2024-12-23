@@ -19,7 +19,7 @@
 <body>
   <header>
     <div class="logo"> 로고(이미지나 글)</div>
-    <div class="muen"> 메뉴</div>
+    <div class="muen"  onclick="location.href = './AP.jsp'"> 메뉴</div>
     <div class="members">
         <div class="login" onclick="location.href = './login.jsp'">로그인(이미지나 글)</div>
         <div class="Sing_Up" onclick="location.href = './Sing_Up.jsp'">회원가입(이미지나 글)</div>

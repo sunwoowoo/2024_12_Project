@@ -26,7 +26,7 @@
 <body>
     <header>
         <div class="logo" onclick="location.href = './Ev_page.html'">로고(이미지나 글)</div>
-        <div class="menu">메뉴</div>
+        <div class="menu" onclick="location.href = './ap.jsp'">메뉴</div>
         <div class="members">
             <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
             <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>

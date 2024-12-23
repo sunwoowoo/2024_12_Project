@@ -28,8 +28,22 @@
         <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
         <div class="menu"> 메뉴</div>
         <div class="members">
-            <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
-            <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
+        <%            
+        String user = (String) session.getAttribute("userid");
+        if (user != null) {
+    %>
+        <div class="user-info">
+          <span><%= session.getAttribute("name") %>님 환영합니다!</span>
+          <button onclick="location.href='./MyPage.jsp'">마이페이지</button>
+        </div>
+    <% 
+      } else {
+    %>
+        <div class="login" onclick="location.href = './login.jsp'">로그인(이미지나 글)</div>
+        <div class="Sing_Up" onclick="location.href = './Sing_Up.jsp'">회원가입(이미지나 글)</div>
+    <% 
+      }
+    %>
         </div>
     </header>
      <main>

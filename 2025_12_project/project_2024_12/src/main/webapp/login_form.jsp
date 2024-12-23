@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.company1.DBManager1" %>
+<%@ page import="com.company1.DBManager" %>
 <%
 	//한글 처리
 	request.setCharacterEncoding("UTF-8");
@@ -14,15 +14,15 @@
         
         // 로그인 성공이면 Mypage로 리다이렉트
         if (message === '짝짝로그인 성공') {
-            window.location.href = "/basicjsp1/MyPage.jsp"; // Mypage 페이지로 리다이렉트
+            window.location.href = "/project_2024_12/MyPage.jsp"; // Mypage 페이지로 리다이렉트
         }
         // 아이디가 존재하지 않는 경우
         else if (message === '등록된 아이디가 존재하지 않습니다.') {
-            window.location.href = "/basicjsp1/login.jsp"; // 로그인 페이지로 리다이렉트
+            window.location.href = "/project_2024_12/login.jsp"; // 로그인 페이지로 리다이렉트
         }
         // 비밀번호가 틀린 경우
         else if (message === '등록된 비밀번호가 틀렸습니다.') {
-            window.location.href = "/basicjsp1/login.jsp"; // 로그인 페이지로 리다이렉트
+            window.location.href = "/project_2024_12/login.jsp"; // 로그인 페이지로 리다이렉트
         }
     }
     </script>
@@ -39,7 +39,7 @@
 
     try {
         // DB 연결
-        conn = DBManager1.getDBConnection();  // DBManager1 클래스에서 DB 연결을 가져옴
+        conn = DBManager.getDBConnection();  // DBManager1 클래스에서 DB 연결을 가져옴
 
         // SQL 쿼리 (아이디와 비밀번호로 검색)
         String sql = "SELECT * FROM Users WHERE userid = ? AND userpassword = ?";

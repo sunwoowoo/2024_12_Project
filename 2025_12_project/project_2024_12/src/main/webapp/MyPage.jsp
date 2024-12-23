@@ -4,7 +4,7 @@
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="com.company1.DBManager1" %>
+<%@ page import="com.company1.DBManager" %>
 <%
 	// 세션에서 로그인된 사용자 정보 가져오기
 	String userid = (String) session.getAttribute("userid");
@@ -29,7 +29,7 @@
 
  	try {
  		// DB 연결
- 		conn = DBManager1.getDBConnection();
+ 		conn = DBManager.getDBConnection();
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, userid); // 로그인된 사용자 ID
         rs = pstmt.executeQuery();
@@ -86,8 +86,8 @@
 <body>
 
   <header>
-    <div class="logo" onclick="location.href = './Ev_page.jsp'"> 로고(이미지나 글)</div>
-    <div class="muen" onclick="location.href = './BoardInsertPage.jsp'"> 메뉴</div>
+    <div class="logo" onclick="location.href = './ap.jsp'"> 로고(이미지나 글)</div>
+    <div class="muen"  onclick="location.href = './AP.jsp'"> 메뉴</div>
     <div class="members">
        <% 
       String user = (String) session.getAttribute("userid");

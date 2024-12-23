@@ -128,7 +128,7 @@ body{
     gap: 10px;
 }
 .car_box {
-    width: 10%;
+    width: 3%;
     height: 100%;
     background: linear-gradient(145deg, #ffffff, #d1d8e0); /* 입체감을 위한 배경 그라데이션 */
     border-radius: 10px;
