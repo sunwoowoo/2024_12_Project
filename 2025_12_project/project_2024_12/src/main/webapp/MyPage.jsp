@@ -87,7 +87,7 @@
 
   <header>
     <div class="logo" onclick="location.href = './Ev_page.jsp'"> 로고(이미지나 글)</div>
-    <div class="muen"> 메뉴</div>
+    <div class="muen" onclick="location.href = './BoardInsertPage.jsp'"> 메뉴</div>
     <div class="members">
        <% 
       String user = (String) session.getAttribute("userid");
