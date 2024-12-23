@@ -5,7 +5,8 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="com.company1.DBManager" %>
-<%
+<%	
+	
 	// 세션에서 로그인된 사용자 정보 가져오기
 	String userid = (String) session.getAttribute("userid");
 	String name = (String) session.getAttribute("name");
@@ -15,11 +16,12 @@
 	java.sql.Date signupDate = (java.sql.Date) session.getAttribute("signup_date");
 	java.sql.Timestamp signupTimestamp = new java.sql.Timestamp(signupDate.getTime());
 	
+
 	// 마지막 수정 시간 표시용 (null이 아닐 경우 포맷팅)
     String lastUpdatedStr = (lastUpdated != null) ? new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(lastUpdated) : "수정된 정보 없음";
     String signupDateStr = (signupDate != null) ? new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(signupDate) : "왜없냐";
 	
- // DB 연결 및 데이터 가져오기
+    // DB 연결 및 데이터 가져오기
  	Connection conn = null;
  	PreparedStatement pstmt = null;
  	ResultSet rs = null;
@@ -86,7 +88,7 @@
 <body>
 
   <header>
-    <div class="logo" onclick="location.href = './ap.jsp'"> 로고(이미지나 글)</div>
+    <div class="logo" onclick="location.href = './Board.jsp'"> 로고(이미지나 글)</div>
     <div class="muen"  onclick="location.href = './AP.jsp'"> 메뉴</div>
     <div class="members">
        <% 
@@ -111,7 +113,7 @@
     <div class="content-wrapper">
         <aside class="sidebar">
         <div class="profile-section">
-          <img src="./Photos11/pr.jpg" alt="프로필 이미지" class="profile-img">
+          <img src="./photos/pr.jpg" alt="프로필 이미지" class="profile-img">
           <h2><%= name %> 님 환영합니다.</h2>
           <p class="email"><%= session.getAttribute("email") %></p>
           <p class="birthdate">생년월일: <%= birthdate %></p>
@@ -192,7 +194,7 @@
  	 function confirmLogout() {
 	    var confirmLogout = confirm("정말 로그아웃 하시겠습니까?");
 	    if (confirmLogout) {
-	        window.location.href = 'login.jsp';
+	        window.location.href = 'logout.jsp';
 	    } 
 	}
      function Mypage_Delete() {
