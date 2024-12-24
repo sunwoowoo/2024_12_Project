@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: 	#212121;
 }
 
 /* section_1 _____________________________________________________________________________________________*/
@@ -39,7 +40,7 @@ body{
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 30px;
     border-radius: 5px;
 }
 .section_1_button:hover{background: rgba(0, 0, 0, 0.8);}
@@ -61,7 +62,7 @@ body{
     transition: all 0.3s ease;
 }
 .dot.active {
-    background: #000;
+    background: #C6E7FF;
     transform: scale(1.5);
 }
 /* section_2 __________________________________*/
@@ -80,10 +81,12 @@ body{
 .section_2_title{
     width: 100%;
     height: 10%;
+    color: wheat;
 }
 .section_2_subtitle{
     width: 100%;
     height: 10%;
+    color: wheat;
 }
 .Car_color{
     width: 100%;
@@ -97,7 +100,7 @@ body{
     border-radius: 30px;
     text-align: center;
     line-height: 100px;
-    background: linear-gradient(145deg, #e6e6e6, #ffffff); 
+    background: linear-gradient(145deg, #C6E7FF, #ffffff); 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 
                 -4px -4px 10px rgba(255, 255, 255, 0.7); 
     font-size: 16px;
@@ -108,7 +111,7 @@ body{
 }
 
 .Car_color_box:active {
-    background: linear-gradient(145deg, #d1d1d1, #f0f0f0); 
+    background: linear-gradient(145deg, #C6E7FF, #f0f0f0); 
     box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), 
                 inset -4px -4px 10px rgba(255, 255, 255, 0.7); 
     transform: scale(0.98); /* 살짝 눌린 효과 */
@@ -138,13 +141,13 @@ body{
 }
 
 .car_box:hover {
-    background: linear-gradient(145deg, #e6ecf0, #ffffff); /* 호버 시 배경 변화 */
+    background: linear-gradient(145deg, #D4F6FF, #ffffff); /* 호버 시 배경 변화 */
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), 
                 -8px -8px 20px rgba(255, 255, 255, 0.8); /* 강조된 그림자 */
 }
 
 .car_box:active {
-    background: linear-gradient(145deg, #d1d8e0, #ffffff); /* 눌렀을 때 배경 */
+    background: linear-gradient(145deg, #D4F6FF, #ffffff); /* 눌렀을 때 배경 */
     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), 
                 inset -5px -5px 10px rgba(255, 255, 255, 0.7); /* 내부 그림자 */
     transform: scale(0.98); /* 살짝 눌린 효과 */
@@ -161,7 +164,7 @@ body{
     width: 100%;
     height: 50%;
     text-align: center;
-    background: sandybrown;
+    background: #D4F6FF;
     border-radius: 10px 10px 0 0;
 }
 .car_photos > div {
@@ -186,6 +189,7 @@ body{
     height: 50%;
     text-align: center;
     line-height: 100px;
+    font-family: 900;
 }
 /* .section_3 ___________________________________*/
 .section_3{
@@ -215,3 +219,10 @@ body{
 }
 .section_3_box > div:nth-child(1){ font-size: 30px;}
 .section_3_box > div:nth-child(2){ font-size: 20px;}
+
+/* .section_3 ___________________________________*/
+
+
+@media screen and (max-width:830px) {
+    
+}

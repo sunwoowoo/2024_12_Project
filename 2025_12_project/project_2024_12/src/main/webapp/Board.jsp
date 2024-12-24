@@ -10,9 +10,6 @@
     request.setCharacterEncoding("UTF-8");
 	
 %>  
-<%
-/*   location.href = './Board.jsp'; */
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +69,7 @@
     if (mileage != null && !mileage.isEmpty()) {
     	String[] mileaget = mileage.split("-");
         if (mileaget.length == 2) {
-            sql.append(" AND car_price BETWEEN ? AND ? ");
+            sql.append(" AND mileage BETWEEN ? AND ? ");
         }
     }
 
@@ -98,7 +95,7 @@
         }
 
         if (mileage != null && !mileage.isEmpty()) {
-        	String[] mileaget  = priceRange.split("-");
+        	String[] mileaget = mileage.split("-");
             if (mileaget.length == 2) {
                 pstmt.setInt(paramIndex++, Integer.parseInt(mileaget[0]));
                 pstmt.setInt(paramIndex++, Integer.parseInt(mileaget[1]));
@@ -189,7 +186,7 @@
         }
 
         if (mileage != null && !mileage.isEmpty()) {
-            countSql += " AND mileage <= ?";
+             countSql += " AND mileage BETWEEN ? AND ?";
         }
 
         PreparedStatement countPstmt = conn.prepareStatement(countSql);
@@ -208,7 +205,7 @@
         }
 
         if (mileage != null && !mileage.isEmpty()) {
-        	 String[] mileaget = priceRange.split("-");
+        	String[] mileaget = mileage.split("-");
              if (mileaget.length == 2) {
                  countPstmt.setInt(paramIndex++, Integer.parseInt(mileaget[0]));
                  countPstmt.setInt(paramIndex++, Integer.parseInt(mileaget[1]));

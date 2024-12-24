@@ -49,9 +49,15 @@
      <main>
         <div class="section_1">
             <div class="section_1_container" id="slider_1">
-                <div class="section_1_slider"></div>
-                <div class="section_1_slider"></div>
-                <div class="section_1_slider"></div>
+                <div class="section_1_slider">
+                
+                </div>
+                <div class="section_1_slider">
+                
+                </div>
+                <div class="section_1_slider">
+                
+                </div>
             </div>
             <div class="section_1_controls">
                 <button class="section_1_button" id="prev"> < </button>
@@ -62,7 +68,7 @@
         <div class="section_2">
             <div class="section_2_box">
                 <div class="section_2_title"><h2>Our Models</h2></div>
-                <div class="section_2_subtitle"><h3>역동적이면서 우아한 디자인과 최첨단 기술을 탑재한 라인업을 살펴 보세요.</h3></div>
+                <div class="section_2_subtitle"><h3> 다양한 차량을 만나보세요.</h3></div>
                 <div class="Car_color">
                     <div onclick="showMain(1)"  class="Car_color_box" id="Car_color_tag1">경차</div>
                     <div onclick="showMain(2)"  class="Car_color_box" id="Car_color_tag2">중형차</div>
@@ -95,7 +101,7 @@
                                                                   String formattedPrice = formatter.format(L_carPrice);
                           ;
                           %>
-                            <div class="car_box">
+                                <div class="car_box" onclick="location.href = './Board.jsp'">
                                 <div class="car_photos">
                                 <div> 차량 번호: <%=L_carBno%></div>
                                  <div> <%=L_carName%></div>
@@ -140,7 +146,7 @@
                     ;
                     ;
                     %>
-                            <div class="car_box">
+                                <div class="car_box" onclick="location.href = './Board.jsp'">
                                 <div class="car_photos">
                                 <div> 차량 번호: <%=C_carBno%></div>
                                  <div><%=C_carName%></div>
@@ -184,7 +190,7 @@
                            ;
                            ;
                            %>
-                            <div class="car_box">
+                                     <div class="car_box" onclick="location.href = './Board.jsp'">
                                 <div class="car_photos">
                                  <div>차량 번호 <%=S_carBno%></div>  
                                  <div><%=S_carName%></div>
@@ -229,7 +235,7 @@
                                                                    String formattedPrice = formatter.format(h_carPrice);
                            ;
                            %>
-                            <div class="car_box">
+                            <div class="car_box" onclick="location.href = './Board.jsp'">
                                 <div class="car_photos">
                                  <div> 차량 번호 <%= h_carBno %></div>  
                                  <div> <%= h_carName %></div>
@@ -282,25 +288,25 @@
             <div>세부 내용</div>
         </div>
         <div class="footer_2"> 
+           <div>고객 서비스 링크</div>
             <ul>
-                고객 서비스 링크
-                <li  사용 가이드></li>
-                <li> 자줒 묻는 질문 (FAQ)</li>
+                <li> 사용 가이드</li>
+                <li> 자주 묻는 질문 (FAQ)</li>
                 <li>가격 정채 페이지</li>
                 <li> 고객 지원 / 고객 센터</li>
             </ul>
         </div>
         <div class="footer_3"> 
+             <div>정책 관련 링크 </div>
             <ul>
-                정책 관련 링크
                 <li>개인정보 처리 방침</li>
-                <li>  사이트 이용 약관</li>
-                <li>   쿠키 정책</li>
+                <li> 사이트 이용 약관</li>
+                <li>  쿠키 정책</li>
             </ul>
         </div>
         <div class="footer_4"> 
+           <div>저작권 정보 </div> 
             <ul>
-                저작권 정보 
                 <li>웝사이트 소유자 정보</li>
                 <li>웹사이트 저작권 정보 (연도 및 소유자)</li>
             </ul>

@@ -8,6 +8,7 @@ header{
     display: flex;
     justify-content: space-around;
     border: 1px solid;
+      background-color: white;
 }
 a{
     list-style: none;
