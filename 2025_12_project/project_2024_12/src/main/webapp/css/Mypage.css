@@ -95,23 +95,98 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
 }
+
 .card {
-  background-color: #ffffff;
+  background: linear-gradient(to right, #4caf50, #8bc34a); /* 그라데이션 효과 추가 */
+  color: #fff; /* 글자 색은 흰색으로 */
   padding: 30px;
   margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative; /* 버튼을 오른쪽 상단에 배치하기 위한 설정 */
 }
+
 .card h3 {
   margin-top: 0;
-  color: #333;
-  font-size: 1.6em;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #fff; /* 제목 색상 흰색 */
 }
+
 .card p {
-  color: #666;
   font-size: 1.1em;
   line-height: 1.6;
+  color: #ffffff; /* 내용 글자 색상 흰색 */
+  margin-bottom: 10px;
 }
+
+/* 회원가입 날짜 */
+.card .join-date {
+  font-size: 0.9em; /* 글자 크기 축소 */
+  color: #ffffff; /* 흰색 */
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* 회원정보 수정 날짜 */
+.card .last-modified-date {
+  font-size: 0.8em; /* 글자 크기 축소 */
+  color: #b0bec5; /* 흐린 회색 */
+  text-align: left;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+/* 회원정보 수정 버튼 */
+.card button:first-of-type {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #009688; /* 기본 청록색 */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10; /* 항상 위로 표시되도록 */
+}
+
+/* 버튼 호버 효과 */
+.card button:first-of-type:hover {
+  background-color: #00796b; /* 클릭 시 청록색을 조금 더 어둡게 */
+  transform: scale(1.05); /* 호버 시 살짝 커지는 효과 */
+}
+
+/* 버튼을 클릭했을 때 색상 변환 */
+.card button:first-of-type:active {
+  background-color: #004d40; /* 클릭된 상태에서 더 어두운 청록색 */
+}
+
+/* 회원탈퇴 버튼 */
+.card button:last-of-type {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #e94e77; /* 빨간색 */
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  z-index: 10; /* 회원탈퇴 버튼도 위에 오도록 설정 */
+}
+
+.card button:last-of-type:hover {
+  background-color: #d44065; /* 버튼 호버시 어두운 빨간색 */
+}
+
 #passwordBox {
   display: none; /* 초기에는 숨겨짐 */
   width: 350px;

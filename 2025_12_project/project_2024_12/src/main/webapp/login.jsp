@@ -41,8 +41,8 @@
             <td><input type="submit" class="btn" value="로그인" ></td>
         </tr>
         <tr>
-          <td> <a href=>아이디 찾기</a>   
-            <a href=>비밀번호 찾기</a>
+          <td> <a href="Find_id.jsp">아이디 찾기</a>   
+            <a href="Find_password.jsp">비밀번호 찾기</a>
             <a href="Sing_Up.jsp">회원가입</a>
           </td> 
       </tr>

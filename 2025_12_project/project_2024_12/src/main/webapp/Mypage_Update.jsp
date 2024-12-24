@@ -39,7 +39,7 @@
         
         <div class="button-container">
             <input type="submit" value="수정 완료">
-            <input type="button" value="취소" onclick="window.location.href='Mypage.jsp';">
+            <input type="button" value="취소" onclick="window.location.href='MyPage.jsp';">
         </div>
     </form>
 </body>

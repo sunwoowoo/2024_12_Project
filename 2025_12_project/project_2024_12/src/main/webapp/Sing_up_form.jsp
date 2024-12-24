@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="com.company1.DBManager" %>
 <%
 	//한글 처리
 	request.setCharacterEncoding("UTF-8");
@@ -15,9 +16,13 @@
 	
    
 
+
     // 유효성 검사 추가
     if (userid.length() > 13) {
         out.println("<script>alert('아이디가 너무 깁니다. 13자 이내로 입력해주세요.'); history.back();</script>");
+        return;
+    } else if(!userid.matches("^[A-Za-z0-9]+$")){
+        out.println("<script>alert('적합한 아이디가 아닙니다. 아이디는 영문 대소문자와 숫자만 사용할 수 있습니다.'); history.back();</script>");
         return;
     }
 	// 비밀번호 유효성 검사
@@ -34,21 +39,19 @@
         out.println("<script>alert('이름은 5자 이내의 한글만 입력할 수 있습니다.'); history.back();</script>");
         return;
     }
+    // 이메일 유효성 검사 추가 (영문 대소문자, 숫자, 특수문자 ., @만 허용)
+    if (!email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")) {
+        out.println("<script>alert('적합한 이메일이 아닙니다. 이메일 형식을 확인해주세요.'); history.back();</script>");
+        return;
+    }
     
     Connection conn = null;
     PreparedStatement psmt = null;
     ResultSet rs = null;
     
     try {
-        // JDBC 드라이버 로딩 (Oracle)
-        Class.forName("oracle.jdbc.OracleDriver");
-
-        // DB 연결
-        String url = "jdbc:oracle:thin:@1.220.247.78:1522/orcl";  // Oracle SID에 맞게 수정
-        String dbUser = "mini_2410_team2";  // 데이터베이스 사용자 이름
-        String dbPassword = "1234";  // 데이터베이스 비밀번호
-        
-        conn = DriverManager.getConnection(url, dbUser, dbPassword);
+ 	    // DB 연결
+        conn = DBManager.getDBConnection();  // DBManager를 통해 DB 연결
         
        
         

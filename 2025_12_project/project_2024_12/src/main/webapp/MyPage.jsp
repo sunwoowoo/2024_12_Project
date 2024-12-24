@@ -122,8 +122,6 @@
           <ul>
             <li onclick="showMain(1)" class="nav_section_box" id="nav_section_tag1"><a href="#account">계정 정보</a></li>
             <li onclick="showMain(2)" class="nav_section_box" id="nav_section_tag2"><a href="#orders">주문 내역</a></li>
-            <li onclick="showMain(3)" class="nav_section_box" id="nav_section_tag3"><a href="#option">옵션A</a></li>
-            <li onclick="showMain(4)" class="nav_section_box" id="nav_section_tag4"><a href="#settings">설정</a></li>
             <li ><a href="#logout" onclick="confirmLogout()">로그아웃</a></li>
           </ul>
         </nav>
@@ -136,10 +134,10 @@
             <p>이름: <%= name %></p>
             <p>이메일: <%= session.getAttribute("email") %></p>
             <p>생년월일: <%= birthdate %></p>
-            <p >마지막 회원 정보 수정 날짜: <%= lastUpdatedStr %></p>  <!-- 마지막 수정 시간 표시 -->
-            <p>회원가입 날짜: <%= signupDateStr %></p>  <!-- 회원가입 날짜 표시 -->
             <button onclick="showPasswordBox()">정보 수정</button>
-            <button onclick="Mypage_Delete()">회원 탈퇴</button>
+            <button onclick="Mypage_Delete()">회원 탈퇴</button> 
+            <p>회원가입 날짜: <%= signupDateStr %></p>
+            <p >마지막 회원 정보 수정 날짜: <%= lastUpdatedStr %></p>
           </div>
         </div>
    		<!-- 비밀번호 입력란 (수정 버튼 클릭 후 보이게 됨) -->
@@ -170,18 +168,6 @@
             </table>
           </div>
         </div>
-        <div class="content-section_box  content_js_3">
-          <div class="card">
-            <h3>설정</h3>
-          <p>설정 표시됩니다.</p>
-        </div>
-        </div>
-        <div class="content-section_box  content_js_4">
-          <div class="card">
-            <h3>옵션A</h3>
-            <p>옵션B 표시됩니다.</p>
-        </div>
-      </div>
       </main>
     </div>
   </div>

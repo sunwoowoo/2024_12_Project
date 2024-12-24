@@ -61,6 +61,7 @@
         <input type="hidden" name="fullEmail" id="fullEmail">
       <tr><td>
         <input type="submit" value="가입완료" class="btn">
+        <input type="button" value="취소" class="btn" onclick="location.href='./login.jsp'">
         </td></tr>
       </table>
   </form>
