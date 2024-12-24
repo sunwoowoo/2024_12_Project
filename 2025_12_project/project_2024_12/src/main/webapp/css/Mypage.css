@@ -114,7 +114,7 @@ body {
 }
 
 .card p {
-  font-size: 1.1em;
+  font-size: 26px;
   line-height: 1.6;
   color: #ffffff; /* 내용 글자 색상 흰색 */
   margin-bottom: 10px;
@@ -190,8 +190,8 @@ body {
 #passwordBox {
   display: none; /* 초기에는 숨겨짐 */
   width: 350px;
-  bottom: 33%;
-  left: -18%; 
+  bottom: 27%;
+  left: -23%; 
   padding: 20px;
   margin: 20px auto;
   background-color: #f0f0f0;
