@@ -20,56 +20,7 @@
 	// 마지막 수정 시간 표시용 (null이 아닐 경우 포맷팅)
     String lastUpdatedStr = (lastUpdated != null) ? new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(lastUpdated) : "수정된 정보 없음";
     String signupDateStr = (signupDate != null) ? new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(signupDate) : "왜없냐";
-	
-    // DB 연결 및 데이터 가져오기
- 	Connection conn = null;
- 	PreparedStatement pstmt = null;
- 	ResultSet rs = null;
- 	String sql = "SELECT C_CAR_BNO, C_CAR_NAME, C_MILEAGE, C_CAR_PRICE " +
-            "FROM LIGHT_CARS " +
-            "WHERE USER_ID = ? AND C_CAR_PRICE >= 40000";  // 차량 가격이 4만 이상인 경우만
-
- 	try {
- 		// DB 연결
- 		conn = DBManager.getDBConnection();
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, userid); // 로그인된 사용자 ID
-        rs = pstmt.executeQuery();
- 		
- 		// 주문 내역을 테이블로 표시하기 위한 변수 선언
- 		StringBuilder ordersTable = new StringBuilder();
- 		
- 		// 데이터가 있을 경우 테이블 형식으로 결과 출력
- 		while (rs.next()) {
- 			String carBno = rs.getString("C_car_bno");
- 			String carName = rs.getString("C_CAR_NAME");
- 			String mileage = rs.getString("C_MILEAGE");
- 			String carPrice = rs.getString("C_CAR_PRICE");
- 			
- 			// 테이블 행 추가
- 			ordersTable.append("<tr>");
- 			ordersTable.append("<td>").append(carBno).append("</td>");
- 			ordersTable.append("<td>").append(carName).append("</td>");
- 			ordersTable.append("<td>").append(mileage).append("</td>");
- 			ordersTable.append("<td>").append(carPrice).append("</td>");
- 			ordersTable.append("</tr>");
- 		}
- 		
- 		// 결과가 없을 경우
- 		if (ordersTable.length() == 0) {
- 			ordersTable.append("<tr><td colspan='4'>주문 내역이 없습니다.</td></tr>");
- 		}
- 		
- 		// 테이블에 주문 내역을 삽입
- 		request.setAttribute("ordersTable", ordersTable.toString());
- 	} catch (SQLException e) {
- 		e.printStackTrace();
- 	} finally {
- 		// 자원 반환
- 		if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
- 		if (pstmt != null) try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
- 		if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
- 	}
+    
  	
 %>
 <!DOCTYPE html>
@@ -121,7 +72,6 @@
         <nav class="nav-section">
           <ul>
             <li onclick="showMain(1)" class="nav_section_box" id="nav_section_tag1"><a href="#account">계정 정보</a></li>
-            <li onclick="showMain(2)" class="nav_section_box" id="nav_section_tag2"><a href="#orders">주문 내역</a></li>
             <li ><a href="#logout" onclick="confirmLogout()">로그아웃</a></li>
           </ul>
         </nav>
@@ -161,10 +111,7 @@
                         <th>차량 가격</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- 주문 내역을 동적으로 채움 -->
-                    <%= request.getAttribute("ordersTable") %>
-                </tbody>
+          
             </table>
           </div>
         </div>
