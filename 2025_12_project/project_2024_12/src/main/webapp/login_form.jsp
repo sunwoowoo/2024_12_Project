@@ -13,7 +13,7 @@
         alert(message); // 메시지 출력
         
         // 로그인 성공이면 Mypage로 리다이렉트
-        if (message === '짝짝로그인 성공') {
+        if (message === '로그인이 성공하였습니다.') {
             window.location.href = "/project_2024_12/MyPage.jsp"; // Mypage 페이지로 리다이렉트
         }
         // 아이디가 존재하지 않는 경우
@@ -55,7 +55,7 @@
             if (userpassword.equals(rs.getString("userpassword"))) {
                 // 로그인 성공
                 out.println("<script>");
-                out.println("showLoginResult('짝짝로그인 성공');");  // 로그인 성공 메시지
+                out.println("showLoginResult('로그인이 성공하였습니다.');");  // 로그인 성공 메시지
                 out.println("</script>");
                 session.setAttribute("userid", userid);
                 session.setAttribute("userpassword", userpassword);

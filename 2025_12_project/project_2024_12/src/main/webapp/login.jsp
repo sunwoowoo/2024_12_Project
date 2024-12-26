@@ -18,27 +18,13 @@
 </head>
 <body>
   <header>
-      <div class="logo" onclick="location.href = './main.jsp'"> 로고(이미지나 글)</div>
-        <div class="menu" onclick="location.href = './Board.jsp'">  게시판</div>
-        <div class="members">
-        <%            
-        String user = (String) session.getAttribute("userid");
-        if (user != null) {
-    %>
-        <div class="user-info">
-          <span><%= session.getAttribute("name") %>님 환영합니다!</span>
-          <button onclick="location.href='./MyPage.jsp'">마이페이지</button>
-        </div>
-    <% 
-      } else {
-    %>
-        <div class="login" onclick="location.href = './login.jsp'">로그인</div>
-        <div class="Sing_Up" onclick="location.href = './Sing_Up.jsp'">회원가입</div>
-    <% 
-      }
-    %>
-        </div>
-    </header>
+    <div class="logo"> 로고(이미지나 글)</div>
+    <div class="muen"  onclick="location.href = './AP.jsp'"> 메뉴</div>
+    <div class="members">
+        <div class="login" onclick="location.href = './login.jsp'">로그인(이미지나 글)</div>
+        <div class="Sing_Up" onclick="location.href = './Sing_Up.jsp'">회원가입(이미지나 글)</div>
+    </div>
+  </header>
   <main>
   <form  action="login_form.jsp" method="post">
     <table>
@@ -64,6 +50,9 @@
     </form>
  </main>
  <footer>
-    </footer>
+    <div class="footer_1"> SNS 사진 총 4개</div>
+    <div class="footer_2"> 이쁜 로고 및 사진</div>
+    <div class="footer_3"> 깃 허브 주소 </div>
+</footer>
 </body>
 </html>
