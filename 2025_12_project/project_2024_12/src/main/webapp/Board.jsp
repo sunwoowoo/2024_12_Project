@@ -129,7 +129,7 @@
         <select id="car_type" name="car_type" size="4" class="section1_box_list">
             <option value="소형차" <%= carType != null && carType.equals("소형차") ? "selected" : "" %> >소형차</option>
             <option value="중형차" <%= carType != null && carType.equals("중형차") ? "selected" : "" %>>중형차</option>
-            <option value="Suv" <%= carType != null && carType.equals("Suv") ? "selected" : "" %>> Suv </option>
+            <option value="SUV" <%= carType != null && carType.equals("SUV") ? "selected" : "" %>> Suv </option>
             <option value="트럭/화물" <%= carType != null && carType.equals("트럭/화물") ? "selected" : "" %>>트럭/화물</option>
         </select>
     </div>
@@ -160,9 +160,9 @@
     <div class="search_button">
         <button type="submit">검색</button>
         <button type="reset" onclick="window.location.href=window.location.pathname;">초기화</button>
-        <button class="insertButton"><a href='./BoardInsert.jsp'>추가</a></button>
     </div>
 </form>
+ <button class="insertButton" onclick ="location.href = './BoardInsert.jsp'">추가</button>
 <div class="section2">
         <div class="content">
          <% 

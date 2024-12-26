@@ -49,9 +49,9 @@
                 </div>
                 <div class="Buttons">
 		            <button class="addButton" onclick="newRegister('l_car_select');">소형 차량 등록</button>
-		            <button class="cancelButton">취소</button>
 		       </div>
 			</form>
+		            <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
 			<form id="c_car_select" class="addContent" action="./BoardInsert_Insert_c.jsp" style="display:none;" method="POST">
 				<div id="c_car" class="content">
 					<div class="c_car_name">차 이름<input type="text" name="c_car_name"/></div>
@@ -60,10 +60,10 @@
 					<div class="c_car_type">타입<input type="text"  name="c_car_type" value="중형차" readonly/></div>
 				</div>
 				<div class="Buttons">
-					<button class="addButton">중형 차량 등록</button>
-					<button class="cancelButton">취소</button>
-				</div>                     
+					<button class="addButton"  onclick="newRegister('c_car_select');">중형 차량 등록</button>
+				</div>                      
 			</form>
+			 <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
 			<form id="s_car_select" class="addContent" action="./BoardInsert_Insert_s.jsp" style="display:none;" method="POST">           		
                 <div id="s_car" class="content">
 		            <div class="s_car_name">차 이름<input type="text" name="s_car_name"/></div>
@@ -72,10 +72,10 @@
 	                <div class="s_car_type">타입<input type="text" name="s_car_type" value="SUV" readonly/></div>
                 </div>
                 <div class="Buttons">
-		            <button class="addButton">SUV 차량 등록</button>
-		            <button class="cancelButton">취소</button>
+		            <button class="addButton"  onclick="newRegister('s_car_select');">SUV 차량 등록</button>
 		       </div>
-           	</form>
+           	</form> 
+           	 <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
 			<form id="h_car_select" class="addContent" action="./BoardInsert_Insert_h.jsp" style="display:none;" method="POST">
                 <div id="h_car" class="content">
 		            <div class="h_car_name">차 이름<input type="text" name="h_car_name"/></div>
@@ -84,10 +84,10 @@
 	              	<div class="h_car_type">타입<input type="text" name="h_car_type" value="트럭/화물" readonly/></div>
 				</div>
 				<div class="Buttons">
-		            <button class="addButton">트럭/화물 차량 등록</button>
-		            <button class="cancelButton">취소</button>
+		            <button class="addButton"  onclick="newRegister('h_car_select');">트럭/화물 차량 등록</button>
 				</div>                    
 			</form>
+			 <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
         </div>
     </div>
  <footer>
