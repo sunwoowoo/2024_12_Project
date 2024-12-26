@@ -51,8 +51,8 @@
 
     // 3. 기본 SQL 쿼리 작성
     StringBuilder sql = new StringBuilder("SELECT * FROM ( " +
-            "  SELECT car_name, mileage AS car_mileage, car_price, car_type, category, ROWNUM AS rn FROM ( " +
-            "    SELECT car_name, mileage, car_price, car_type, category FROM car_list_view WHERE 1=1 ");
+            "  SELECT car_bno, car_name, mileage AS car_mileage, car_price, car_type, category, ROWNUM AS rn FROM ( " +
+            "    SELECT car_bno, car_name, mileage, car_price, car_type, category FROM car_list_view WHERE 1=1 ");
 
     // 필터 조건 추가
     if (carType != null && !carType.isEmpty()) {
@@ -122,7 +122,7 @@
 
     <div class="section1_list_2">
         <div class="title">가격</div>
-        <select id="price_range" name="price_range" size="4" >
+        <select id="price_range" name="price_range" size="4" class="section1_box_list">
             <option value="100000-1000000" <%= priceRange != null && priceRange.equals("100000-1000000") ? "selected" : "" %>>1,000만원 이하</option>
             <option value="1000000-3000000" <%= priceRange != null && priceRange.equals("1000000-3000000") ? "selected" : "" %>>1,000만원 ~ 3,000만원</option>
             <option value="3000000-5000000" <%= priceRange != null && priceRange.equals("3000000-5000000") ? "selected" : "" %>>3,000만원 ~ 5,000만원</option>
@@ -134,7 +134,7 @@
     </div>
     <div class="section1_list_3">
         <div class="title">주행 거리</div>
-        <select id="mileage" name="mileage" size="4" >
+        <select id="mileage" name="mileage" size="4" class="section1_box_list">
         <option value="0-50000" <%= mileage != null && mileage.equals("50000") ? "selected" : "" %>>5만 km 이하</option>
         <option value="50000-100000" <%= mileage != null && mileage.equals("50000-100000") ? "selected" : "" %>>5만 km ~ 10만 km</option>
         <option value="100000-150000" <%= mileage != null && mileage.equals("100000-150000") ? "selected" : "" %>>10만 km ~ 15만 km</option>
@@ -146,6 +146,7 @@
     <div class="search_button">
         <button type="submit">검색</button>
         <button type="reset" onclick="window.location.href=window.location.pathname;">초기화</button>
+        <button class="insertButton"><a href='./BoardInsert.jsp'>추가</a></button>
     </div>
 </form>
 <div class="section2">
@@ -159,12 +160,14 @@
             String formattedMileage = formatter.format(carMileage);
             String formattedPrice = formatter.format(carPrice);
 %>
-            <div class="car_box">
-                <div>차 이름: <%= rs.getString("car_name") %></div>
-                <div>주행 거리: <%= formattedMileage %> km</div>
-                <div>가격: <%= formattedPrice %> 원</div>
-                <div>차 종류: <%= rs.getString("car_type") %></div>
-            </div>
+            <div class="car_box" data-id="<%= rs.getInt("car_bno") %>" data-category="<%= rs.getString("category") %>">
+			    <div>차 이름: <%= rs.getString("car_name") %></div>
+			    <div>주행 거리: <%= formattedMileage %> km</div>
+			    <div>가격: <%= formattedPrice %> 원</div>
+			    <div>차 종류: <%= rs.getString("car_type") %></div>
+			    <button class="deleteButton">삭제</button>
+			</div>
+
 <%
         }
          // 페이지 번호 가져오기
@@ -275,7 +278,7 @@
     }
     %>
     </div>
-    </div>
+
        
 <footer>
         <div class="footer_1">
@@ -313,6 +316,31 @@
             </ul>
         </div>
     </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const deleteButtons = document.querySelectorAll(".deleteButton");
+        deleteButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+                if (confirm('삭제하시겠습니까?')) {
+                    // 부모 요소에서 data-id를 가져오기
+                    const carBox = event.target.closest('.car_box');
+                    const carBno = carBox.getAttribute('data-id');
+                    const category = carBox.getAttribute('data-category'); // 카테고리 속성 추가
+
+                    if (carBno && category) {
+                        // 삭제 요청
+                        location.href = './BoardDelete.jsp?car_bno='+ carBno + '&category=' + category;
+                    } else {
+                        alert('삭제할 데이터가 없습니다.');
+                    }
+                }
+            });
+        });
+    });
+
+   			
+    	
+    </script>
 </body>
 </html>
     
