@@ -1,0 +1,130 @@
+/* 로그인 폼 */
+body {
+  background-color: #f4f9f9; /* 부드러운 연한 회색 배경 */
+  font-family: 'Noto Sans KR', sans-serif; /* 세련된 서체 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 전체 페이지에 부드러운 배경 추가 */
+.main-background {
+  background: linear-gradient(135deg, #6dd5ed, #2193b0); /* 그라데이션 배경 */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 331px;
+  height: auto;
+  margin: 120px auto;
+  border: 1px solid #9ccc65; /* 연두색 테두리 */
+  border-radius: 15px; /* 라운드된 테두리 */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  background-color: #ffffff; /* 흰색 배경 */
+  padding: 30px;
+}
+
+/* 헤더 타이틀 */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #4CAF50;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: #4CAF50;
+  left: 25%;
+  bottom: -10px;
+}
+
+/* 입력 필드 스타일 */
+.box {
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding-left: 15px;
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.box:focus {
+  border-color: #4CAF50; /* 입력창 포커스 시 연두색 테두리 */
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* 포커스 시 그림자 효과 */
+}
+
+/* 로그인 버튼 스타일 */
+.btn {
+  width: 100%;
+  height: 45px;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #4CAF50;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.btn:active {
+  background-color: #3e8e41;
+}
+
+/* 각 항목들 스타일 */
+td {
+  padding: 15px -1px;
+}
+
+/* 버튼과 입력 필드의 상하 여백 조정 */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  background-color: rgb(233, 233, 233);
+}
+
+/* 배경 효과 추가 */
+.main-background:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0); /* 그라데이션 배경 */
+  opacity: 0.05; /* 배경 텍스처 투명도 조절 */
+  z-index: -1;
+}
+
+/* 로그인 폼 전체 여백 및 정렬 */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 미디어 쿼리: 화면 크기가 작은 디바이스에서 레이아웃 조정 */
+@media (max-width: 480px) {
+  table {
+    width: 90%; /* 작은 화면에서 더 좁게 설정 */
+    padding: 15px;
+  }
+}
