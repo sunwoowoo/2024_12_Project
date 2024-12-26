@@ -76,7 +76,7 @@
                     <div onclick="showMain(4)"  class="Car_color_box" id="Car_color_tag4">트럭 / 화물</div>
                 </div>
                 <div class="Car_type" >
-                    <div class="Car_type_box Car_type_box_scroll Car_type_js_1" id="Car_type_divA">
+                    <div class="Car_type_box Car_type_box_scroll  Car_type_js_1" id="Car_type_divA">
                         <div  class="Car_conten">
                           <%
                                                           Connection conn = null;

@@ -82,9 +82,40 @@
 </script>
 </main>
 <footer>
-  <div class="footer_1"> SNS 사진 총 4개</div>
-  <div class="footer_2"> 이쁜 로고 및 사진</div>
-  <div class="footer_3"> 깃 허브 주소 </div>
-</footer>
+        <div class="footer_1">
+            <div>로고</div>
+            <div class="sns">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>세부 내용</div>
+        </div>
+        <div class="footer_2"> 
+           <div>고객 서비스 링크</div>
+            <ul>
+                <li> 사용 가이드</li>
+                <li> 자주 묻는 질문 (FAQ)</li>
+                <li>가격 정채 페이지</li>
+                <li> 고객 지원 / 고객 센터</li>
+            </ul>
+        </div>
+        <div class="footer_3"> 
+             <div>정책 관련 링크 </div>
+            <ul>
+                <li>개인정보 처리 방침</li>
+                <li> 사이트 이용 약관</li>
+                <li>  쿠키 정책</li>
+            </ul>
+        </div>
+        <div class="footer_4"> 
+           <div>저작권 정보 </div> 
+            <ul>
+                <li>웝사이트 소유자 정보</li>
+                <li>웹사이트 저작권 정보 (연도 및 소유자)</li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

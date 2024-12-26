@@ -85,18 +85,17 @@ function showMain(num) {
         selectedMain.style.display = 'block';
         selectedMain.style.width = '100%'; 
         selectedMain.style.height = '100%';
-        selectedMain.style.background = '#fff'; 
     }
 
     var tags = document.querySelectorAll('.Car_color > div');
     tags.forEach(function(tag) {
-        tag.style.background = '#dfe6e9';
+        tag.style.background = '#C6E7FF';
         tag.style.color = 'black';
     });
 
     var selectedTag = document.getElementById('Car_color' + num);
     if (selectedTag) {
-        selectedTag.style.background = '#7f8c8d'; 
+        selectedTag.style.background = '#C6E7FF'; 
         selectedTag.style.color = '#fff';
     }
 }

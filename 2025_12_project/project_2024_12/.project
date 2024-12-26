@@ -28,4 +28,36 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/photos/main_search_1_js_11.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/%EC%83%88%20%ED%8F%B4%EB%8D%94/img/main_search_1_js_11.jpg</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/photos/main_search_1_js_12.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/%EC%83%88%20%ED%8F%B4%EB%8D%94/img/main_search_1_js_12.jpg</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/photos/main_search_3_1.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/%EC%83%88%20%ED%8F%B4%EB%8D%94/img/main_search_3_1.jpg</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/photos/main_search_3_2.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/%EC%83%88%20%ED%8F%B4%EB%8D%94/img/main_search_3_2.jpg</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/photos/main_search_3_3.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/%EC%83%88%20%ED%8F%B4%EB%8D%94/img/main_search_3_3.jpg</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/photos/main_search_3_4.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/%EC%83%88%20%ED%8F%B4%EB%8D%94/img/main_search_3_4.jpg</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

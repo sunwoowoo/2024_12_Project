@@ -6,12 +6,11 @@ body{
 
 footer{
     width: 100%;
-    height: 300px;
     display: flex;
     justify-content: flex-start;
     color: wheat;
     font-family: 900;
-     background-color: 	#212121;
+     background-color:#212121;
 }
 .footer_1{
     width: 25%;
