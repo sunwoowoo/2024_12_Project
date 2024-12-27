@@ -102,10 +102,10 @@
                 </div>
                 <div class="search_2_box_2">
                     <div id="slider_1" class="slider">
-                        <div class="slide">1</div>
-                        <div class="slide">2</div>
-                        <div class="slide">3</div>
-                        <div class="slide">4</div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
                     </div>
                     <button id="prev" class="slider-button prev-button"> < </button>
                     <button id="next" class="slider-button next-button"> ></button>
