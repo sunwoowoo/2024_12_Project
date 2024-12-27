@@ -20,8 +20,8 @@
 </head>
 <body>
     <header>
-        <div class="logo" onclick="location.href = './main.jsp'"> 로고(이미지나 글)</div>
-        <div class="menu" onclick="location.href = './Board.jsp'">  게시판</div>
+        <div class="logo" onclick="location.href = './main.jsp'"> </div>
+        <div class="menu" onclick="location.href = './AP.jsp'">  게시판</div>
         <div class="members">
         <%            
         String user = (String) session.getAttribute("userid");
@@ -53,13 +53,13 @@
                 <div></div>
                 <div>
                     <div class="search_1_title">
-                        <div onclick="showMain(1)" class="search_1_img_box" id="search_1_tag1"> 클릭시 효과</div>
-                        <div onclick="showMain(2)" class="search_1_img_box" id="search_1_tag2"> 클릭시 효과</div>
-                        <div onclick="showMain(3)" class="search_1_img_box" id="search_1_tag3"> 클릭시 효과</div>
-                        <div onclick="showMain(4)" class="search_1_img_box" id="search_1_tag4"> 클릭시 효과</div>
+                        <div onclick="showMain(1)" class="search_1_img_box" id="search_1_tag1"> 모델1</div>
+                        <div onclick="showMain(2)" class="search_1_img_box" id="search_1_tag2"> 모델2</div>
+                        <div onclick="showMain(3)" class="search_1_img_box" id="search_1_tag3"> 모델3</div>
+                        <div onclick="showMain(4)" class="search_1_img_box" id="search_1_tag4"> 모델4</div>
                     </div>
                     <div class="search_1_subtitle">
-                        <h1>제목</h1>
+                        <h1>car</h1>
                     </div>
                     <div class="search_1_so_img_box">
                         <div class="search_1_type_box search_1_js_1">
@@ -84,7 +84,7 @@
         </div>
         <div class="search_2">
             <div class="title">
-                <h1>전기차</h1>
+                <h1>Innovative</h1>
             </div>
             <div class="subtitle">
                 <h3>지구 환경을 품은 자동차의 미래형 모빌리티를 경험해보세요.</h3>

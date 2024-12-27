@@ -21,13 +21,28 @@
     <link rel="stylesheet" href="./css/Footer.css">
 </head>
 <body>
-    <header>
-        <div class="logo" onclick="location.href = './Ev_page.html'"> 로고(이미지나 글)</div>
-        <div class="muen"> 메뉴</div>
+     <header>
+      <div class="logo" onclick="location.href = './main.jsp'"></div>
+        <div class="menu" onclick="location.href = './AP.jsp'">  게시판</div>
         <div class="members">
-            <div class="login" onclick="location.href = './Login.html'">로그인(이미지나 글)</div>
-            <div class="Sing_Up" onclick="location.href = './Sing_Up.html'">회원가입(이미지나 글)</div>
+        <%            
+        String user = (String) session.getAttribute("userid");
+        if (user != null) {
+    %>
+        <div class="user-info">
+          <span><%= session.getAttribute("name") %>님 환영합니다!</span>
+          <button onclick="location.href='./MyPage.jsp'">마이페이지</button>
         </div>
+    <% 
+      } else {
+    %>
+        <div class="login" onclick="location.href = './login.jsp'">로그인</div>
+        <div class="Sing_Up" onclick="location.href = './Sing_Up.jsp'">회원가입</div>
+    <% 
+      }
+    %>
+        </div>
+    </header>
     </header>
     <div class="container">
         <h1>차량 추가</h1>
@@ -41,7 +56,7 @@
 		</div> 
         <div class="section1">
 			<form id="l_car_select" class="addContent" action="./BoardInsert_Insert_l.jsp" method="POST">
-				<div id="l_car" class="content">
+			<div id="l_car" class="content">
 		            <div class="l_car_name">차 이름<input type="text" name="l_car_name"/></div>
 	                <div class="l_mileage">주행 거리 <input type="text" name="l_mileage"/></div>
 	                <div class="l_car_price">가격 <input type="text" name="l_car_price"/></div>
@@ -51,7 +66,7 @@
 		            <button class="addButton" onclick="newRegister('l_car_select');">소형 차량 등록</button>
 		       </div>
 			</form>
-		            <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
+
 			<form id="c_car_select" class="addContent" action="./BoardInsert_Insert_c.jsp" style="display:none;" method="POST">
 				<div id="c_car" class="content">
 					<div class="c_car_name">차 이름<input type="text" name="c_car_name"/></div>
@@ -63,7 +78,7 @@
 					<button class="addButton"  onclick="newRegister('c_car_select');">중형 차량 등록</button>
 				</div>                      
 			</form>
-			 <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
+
 			<form id="s_car_select" class="addContent" action="./BoardInsert_Insert_s.jsp" style="display:none;" method="POST">           		
                 <div id="s_car" class="content">
 		            <div class="s_car_name">차 이름<input type="text" name="s_car_name"/></div>
@@ -75,7 +90,7 @@
 		            <button class="addButton"  onclick="newRegister('s_car_select');">SUV 차량 등록</button>
 		       </div>
            	</form> 
-           	 <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
+
 			<form id="h_car_select" class="addContent" action="./BoardInsert_Insert_h.jsp" style="display:none;" method="POST">
                 <div id="h_car" class="content">
 		            <div class="h_car_name">차 이름<input type="text" name="h_car_name"/></div>
@@ -87,10 +102,10 @@
 		            <button class="addButton"  onclick="newRegister('h_car_select');">트럭/화물 차량 등록</button>
 				</div>                    
 			</form>
-			 <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
         </div>
     </div>
- <footer>
+     <button class="cancelButton" onclick="location.href='./Board.jsp'">취소</button>
+     <footer>
     </footer>
     <script>    	
         document.addEventListener("DOMContentLoaded", function() {

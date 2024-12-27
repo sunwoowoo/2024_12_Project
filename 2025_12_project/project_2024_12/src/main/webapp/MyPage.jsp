@@ -37,10 +37,9 @@
   </script>
 </head>
 <body>
-
-  <header>
-      <div class="logo" onclick="location.href = './main.jsp'"> 로고(이미지나 글)</div>
-        <div class="menu" onclick="location.href = './Board.jsp'">  게시판</div>
+   <header>
+      <div class="logo" onclick="location.href = './main.jsp'"></div>
+        <div class="menu" onclick="location.href = './AP.jsp'">  게시판</div>
         <div class="members">
         <%            
         String user = (String) session.getAttribute("userid");
@@ -53,8 +52,8 @@
     <% 
       } else {
     %>
-        <div class="login" onclick="location.href = './login.jsp'">로그인(이미지나 글)</div>
-        <div class="Sing_Up" onclick="location.href = './Sing_Up.jsp'">회원가입(이미지나 글)</div>
+        <div class="login" onclick="location.href = './login.jsp'">로그인</div>
+        <div class="Sing_Up" onclick="location.href = './Sing_Up.jsp'">회원가입</div>
     <% 
       }
     %>

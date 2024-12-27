@@ -22,8 +22,8 @@
 </head>
 <body>
       <header>
-      <div class="logo" onclick="location.href = './main.jsp'"> 로고(이미지나 글)</div>
-        <div class="menu" onclick="location.href = './Board.jsp'">  게시판</div>
+      <div class="logo" onclick="location.href = './main.jsp'"> </div>
+        <div class="menu" onclick="location.href = './AP.jsp'">  게시판</div>
         <div class="members">
         <%            
         String user = (String) session.getAttribute("userid");
@@ -162,7 +162,9 @@
         <button type="reset" onclick="window.location.href=window.location.pathname;">초기화</button>
     </div>
 </form>
+<div class= "add_button">
  <button class="insertButton" onclick ="location.href = './BoardInsert.jsp'">추가</button>
+</div>
 <div class="section2">
         <div class="content">
          <% 

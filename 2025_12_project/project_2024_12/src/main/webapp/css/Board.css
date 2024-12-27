@@ -22,7 +22,6 @@ form{
     margin: 20px auto;
     padding: 20px;
     display: flex;
-    margin-bottom: 40px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -93,7 +92,12 @@ form > div {
 .price_range.highlight , .mileage.mileagelist{
     background-color: #f0f0f0; 
 }
-
+.add_button{
+    width: 94%;
+    height: 100px;
+    display: flex;   
+    flex-direction: row-reverse;
+}
 /* -------------------section2------------------- */
 .section2 {
     width: 100%;
@@ -201,6 +205,7 @@ button[type="reset"]:hover {
 }
 
 .insertButton {
+	width: 157px;
     display: inline-block;
     padding: 10px 20px;
     background-color: #28a745;

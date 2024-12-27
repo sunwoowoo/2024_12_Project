@@ -81,13 +81,11 @@ function showMain(num) {
 
     var tags = document.querySelectorAll('.search_1_title > div');
     tags.forEach(function(tag) {
-        tag.style.background = '#C6E7FF';
         tag.style.color = 'black';
     });
 
     var selectedTag = document.getElementById('search_1_title' + num);
     if (selectedTag) {
-        selectedTag.style.background = '#C6E7FF'; 
         selectedTag.style.color = '#fff';
     }
 }

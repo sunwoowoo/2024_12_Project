@@ -40,7 +40,9 @@ li {
     height: 100%;
         cursor: pointer;
 }
-
+.logo{
+	 background: url(../photos/logo.png) no-repeat center / cover;
+}
 .menu {
     width: 55%;
     height: 100%;

@@ -41,11 +41,26 @@ h1{
     justify-content: center;
     gap: 20px;
 }
+
 .search_1_title > div {
     width: 20%;
     height: 100%;
     text-align: center;
+    background-color: #e0f7ff; /* 살짝 하늘색 */
+    border-radius: 10px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* 입체감 */
+    display: flex; /* 내용물 정렬을 위한 Flexbox */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s; /* 부드러운 애니메이션 */
+    cursor: pointer; /* 클릭 가능 마우스 포인터 */
 }
+
+.search_1_title > div:active {
+    transform: scale(0.95); /* 살짝 눌리는 효과 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 변경 */
+}
+
 .search_1_subtitle{
     width: 100%;
     height: 15%;
@@ -68,12 +83,15 @@ h1{
 }
 
 .search_1_box > div:nth-child(1){ background: url(../photos/main_search_1.jpg) no-repeat center / cover;}
-.search_1_js_1 >div:nth-child(1) { background: url(../photos/main_search_1_js_11.jpg) no-repeat center ;}
-.search_1_js_1 >div:nth-child(2) { background: url(../photos/main_search_1_js_12.jpg) no-repeat center;}
-.search_1_js_2 >div:nth-child(1) { background: url(../photos/main_search_1_js_21.jpg) no-repeat center ;}
-.search_1_js_2 >div:nth-child(2) { background: url(../photos/main_search_1_js_22.jpg) no-repeat center;}
-.search_1_js_3 >div:nth-child(1) { background: url(../photos/main_search_1_js_31.jpg) no-repeat center ;}
-.search_1_js_3 >div:nth-child(2) { background: url(../photos/main_search_1_js_32.jpg) no-repeat center ;}
+.search_1_js_1 >div:nth-child(1) { background: url(../photos/main_search_1_js_11.jpg) no-repeat center  / cover;}
+.search_1_js_1 >div:nth-child(2) { background: url(../photos/main_search_1_js_12.jpg) no-repeat center  / cover;}
+.search_1_js_2 >div:nth-child(1) { background: url(../photos/main_search_1_js_21.jpg) no-repeat center  / cover;}
+.search_1_js_2 >div:nth-child(2) { background: url(../photos/main_search_1_js_22.jpg) no-repeat center / cover;}
+.search_1_js_3 >div:nth-child(1) { background: url(../photos/main_search_1_js_31.jpg) no-repeat center / cover ;}
+.search_1_js_3 >div:nth-child(2) { background: url(../photos/main_search_1_js_32.jpg) no-repeat center  / cover;}
+.search_1_js_4 >div:nth-child(1) { background: url(../photos/main_search_1_js_41.jpg) no-repeat center  / cover ;}
+.search_1_js_4 >div:nth-child(2) { background: url(../photos/main_search_1_js_32.jpg) no-repeat center  / cover;}
+
 /* search_2 _____________________________________________ */
 
 .search_2 {
@@ -101,7 +119,10 @@ h1{
     transition: transform 0.5s ease-in-out;
     height: 100%; 
 }
-
+.slider > div:nth-child(1){ background: url(../photos/main_search_2_1.jpg) no-repeat center / cover;}
+.slider > div:nth-child(2){ background: url(../photos/main_search_2_2.png) no-repeat center / cover;}
+.slider > div:nth-child(3){ background: url(../photos/main_search_2_3.jpg) no-repeat center / cover;}
+.slider > div:nth-child(4){ background: url(../photos/main_search_2_4.jpg) no-repeat center / cover;}
 .slide {
     flex: 0 0 100%; 
     height: 100%; 
@@ -111,7 +132,6 @@ h1{
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
-    background-color: #4CAF50; /* 슬라이드 색상 */
 }
 
 .slider-button {
@@ -170,7 +190,7 @@ h1{
 .box_outer {
     width: 100%;
     height: 100%;
-    background-color: #ddd;
+    background: url(../photos/main_search_21.jpg) no-repeat center / cover ;
     position: relative;
     overflow: hidden;
 }
@@ -178,7 +198,7 @@ h1{
 .box_inner {
     width: 0%; 
     height: 100%;
-    background-color: #4CAF50; 
+    background: url(../photos/main_search_22.jpg) no-repeat center / cover ; 
     position: absolute;
     top: 0;
     left: 0;
