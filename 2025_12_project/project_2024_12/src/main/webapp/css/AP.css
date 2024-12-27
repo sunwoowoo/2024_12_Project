@@ -185,7 +185,7 @@ body{
     margin: 0 auto;
 }
 .car_list > div{
-    width: 100%;
+    width: 210px;
     height: 50%;
     text-align: center;
     line-height: 100px;
