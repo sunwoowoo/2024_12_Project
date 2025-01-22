@@ -1,0 +1,47 @@
+오라클 사용	
+주소:jdbc:oracle:thin:@1.220.247.78:1522/orcl
+유저:mini_2410_team2
+비밀번호:1234
+차 정보 테이블
+CREATE TABLE compact_cars (
+    C_car_bno   NUMBER PRIMARY KEY,
+    C_car_name  VARCHAR2(50) NOT NULL,
+    C_mileage   NUMBER(8,2) NOT NULL,
+    C_car_price NUMBER(8,2) NOT NULL,
+    C_car_type  VARCHAR(50) NOT NULL,
+);
+CREATE TABLE heavy_cars (
+    H_car_bno   NUMBER PRIMARY KEY,
+    H_car_name  VARCHAR2(50) NOT NULL,
+    H_mileage   NUMBER(8,2) NOT NULL,
+    H_car_price NUMBER(8,2) NOT NULL,
+    H_car_type  VARCHAR(50) NOT NULL,
+);
+CREATE TABLE light_cars (
+    L_car_bno   NUMBER PRIMARY KEY,
+    L_car_name  VARCHAR2(50) NOT NULL,
+    L_mileage   NUMBER(8,2) NOT NULL,
+    L_car_price NUMBER(8,2) NOT NULL,
+    L_car_type  VARCHAR(50) NOT NULL,
+);
+CREATE TABLE SUV(
+    S_car_bno   NUMBER PRIMARY KEY,
+    S_car_name  VARCHAR2(50) NOT NULL,
+    S_mileage   NUMBER(8,2) NOT NULL,
+    S_car_price NUMBER(8,2) NOT NULL,
+    S_car_type  VARCHAR(50) NOT NULL,
+);
+차 정보 뷰 테이블
+
+유저 테이블
+CREATE TABLE SUV(
+    usernumber   NUMBER NOT NULL
+    userid  VARCHAR2(50) NOT NULL,
+    userpassword   NUMBER(50) NOT NULL,
+    userpassword2 NUMBER(50) ,
+    name VARCHAR2(100),
+    email VARCHAR2(100),
+    birthate DATE,
+    last_update TIMESTAMP,
+    signup_date TIMESTAMP
+);
